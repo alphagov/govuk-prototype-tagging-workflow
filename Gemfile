@@ -44,3 +44,4 @@ group :development, :test do
 end
 
 gem 'govuk_admin_template', '2.3.3'
+gem 'govuk_frontend_toolkit', :git => "https://github.com/alphagov/govuk_frontend_toolkit_gem.git", :submodules => true
