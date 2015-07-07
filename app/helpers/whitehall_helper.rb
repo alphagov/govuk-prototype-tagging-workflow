@@ -1,0 +1,2 @@
+module WhitehallHelper
+end
