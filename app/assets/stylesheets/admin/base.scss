@@ -1,0 +1,62 @@
+
+// STYLEGUIDE
+// From the https://github.com/alphagov/govuk_frontend_toolkit
+@import "_colours.scss";
+@import "_conditionals.scss";
+@import "_measurements.scss";
+@import "_css3.scss";
+@import "_shims.scss";
+@import "_typography.scss";
+
+@import "govuk_admin_template/emulate/_forms.scss";
+
+// COMPONENTS
+@import "alerts.scss";
+@import "document.scss";
+@import "environment.scss";
+@import "forms.scss";
+@import "layout.scss";
+@import "preview.scss";
+@import "sortable.scss";
+@import "audit_trail.scss";
+@import "fact_check_requests.scss";
+@import "govspeak_help.scss";
+@import "organisation.scss";
+@import "classifications.scss";
+@import "person.scss";
+@import "sidebar.scss";
+@import "lists.scss";
+@import "get_involved.scss";
+@import "import.scss";
+
+// GLOBAL
+// Styles that apply to all of admin.
+@import "global/_boostrap-overrides.scss";
+@import "global/_js-hidden.scss";
+
+// HELPERS
+// Objects that can be used in more than one place throughout the admin
+@import "helpers/_broken_links_report.scss";
+@import "helpers/_document_finder.scss";
+@import "helpers/_document_list.scss";
+@import "helpers/_navigation_controls.scss";
+@import "helpers/_jquery_ui_overrides.scss";
+@import "helpers/_statistics_announcements.scss";
+@import "helpers/_words_to_avoid_highlighter.scss";
+@import "helpers/bootstrap/_button_dropdown.scss";
+
+// helpers shared with frontend
+@import "../shared/helpers/_player-container.scss";
+
+// VIEWS
+// Controller specific styles. Usually named after the controller whos views
+// they relate to
+@import "views/_dashboard.scss";
+@import "views/_edition_form.scss";
+@import "views/_edition_show.scss";
+@import "views/_editions-index.scss";
+@import "views/_edition_edit_help.scss";
+@import "views/_document_collection_groups.scss";
+@import "views/_organisation.scss";
+@import "views/editions/confirm_unpublish.scss";
+@import "views/editions/_filter_options.scss";
