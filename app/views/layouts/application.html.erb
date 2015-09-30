@@ -4,7 +4,16 @@
 <% content_for :head do %>
   <%= stylesheet_link_tag "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "admin" %>
+  <%= javascript_include_tag "elements" %>
+  <%= javascript_include_tag "prototype" %>
+  <script>
+  $(function() {
+    GOVUK.init(GOVUK.adminGlobalInitialiser);
+  });
+  </script>
 <% end %>
 
 <%# use the govuk_admin_template layout %>
 <%= render :template => 'layouts/govuk_admin_template' %>
+
