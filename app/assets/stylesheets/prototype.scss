@@ -1,0 +1,59 @@
+.form-date {
+  .form-group {
+    float: left;
+    width: 50px;
+
+    margin-right: 20px;
+    margin-bottom: 0;
+    clear: none;
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input {
+      width: 100%;
+    }
+  }
+
+  .form-group-year {
+    width: 70px;
+  }
+}
+
+// Use .grid-row to define a row for grid columns to sit in
+%grid-row {
+  @extend %contain-floats;
+  margin: 0 (-$gutter-half);
+}
+
+.grid-row {
+  @extend %grid-row;
+}
+
+.tag-explorer {
+  @extend %contain-floats;
+
+  .tag-container {
+    width: 50%;
+    float: left;
+    max-height: 20em;
+    overflow: scroll;
+  }
+}
+
+form {
+  fieldset {
+    legend {
+      &.panel-title {
+        padding-top: 0;
+        border-top: none;
+      }
+    }
+  }
+}
+
+.chosen-disabled {
+  opacity: 1 !important;
+}

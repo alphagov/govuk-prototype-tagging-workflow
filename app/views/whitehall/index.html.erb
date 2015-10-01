@@ -13,7 +13,7 @@
 
     <div class="tabbable">
       <ul class="nav nav-tabs add-bottom-margin">
-        <li class="active"><a href="/government/admin/detailed-guides/new">Document</a></li>
+        <li class="active"><a href="/">Document</a></li>
       </ul>
 
       <div class="tab-content">
@@ -44,55 +44,46 @@
             </div>
           </fieldset>
 
-          <fieldset class="first-published-date well ">
+          <fieldset class="first-published-date well show-hide">
             <p class="required">This document <span>*</span></p>
             <div class="radio">
               <label class="radio" for="edition_previously_published_false">
                 <input type="radio" value="false" name="edition[previously_published]" id="edition_previously_published_false" />
-                has never been published before. It is new.
+                has never been published before. It's new.
               </label>
             </div>
             <div class="radio">
-              <label class="radio" for="edition_previously_published_true">
+              <label class="radio" for="edition_previously_published_true" data-target="js-show-first-published">
                 <input type="radio" value="true" name="edition[previously_published]" id="edition_previously_published_true" />
                 has previously been published on another website.
               </label>
             </div>
-            <div class="js-show-first-published show-first-published">
-              <label class="required" for="edition_first_published_at">Its original publication date was <span>*</span></label>
 
-              <div class="form-inline">
+            <div class="js-show-first-published show-first-published js-hidden" id="js-show-first-published">
+              <fieldset>
+                <p class="required" for="edition_first_published_at">Its original publication date was <span>*</span></p>
 
-                <select id="edition_first_published_at_1i" name="edition[first_published_at(1i)]" class="date form-control">
-                  <option value=""></option>
-                  <option value="2015">2015</option>
-                </select>
+                <div class="form-date grid-row">
+                  <div class="form-group form-group-day">
+                    <label for="first-published-day">Day</label>
+                    <input type="text" name="first-published-day" class="form-control" />
+                  </div>
 
-                <select id="edition_first_published_at_2i" name="edition[first_published_at(2i)]" class="date form-control">
-                  <option value=""></option>
-                  <option value="1">January</option>
-                </select>
+                  <div class="form-group form-group-month">
+                    <label for="first-published-day">Month</label>
+                    <input type="text" name="first-published-month" class="form-control" />
+                  </div>
 
-                <select id="edition_first_published_at_3i" name="edition[first_published_at(3i)]" class="date form-control">
-                  <option value=""></option>
-                  <option value="1">1</option>
-                </select>
+                  <div class="form-group form-group-year">
+                    <label for="first-published-day">Year</label>
+                    <input type="text" name="first-published-year" class="form-control" />
+                  </div>
 
-                &mdash;
+                </div>
 
-                <select id="edition_first_published_at_4i" name="edition[first_published_at(4i)]" class="date form-control">
-                  <option value=""></option>
-                  <option value="00">00</option>
-                </select>
+                <p>Only complete this field if the document is not new.</p>
 
-                : <select id="edition_first_published_at_5i" name="edition[first_published_at(5i)]" class="date form-control">
-                  <option value=""></option>
-                  <option value="00">00</option>
-                </select>
-
-              </div>
-
-              <span class="if-js-hide">Only complete this field if the document is not new.</span>
+              </fieldset>
             </div>
           </fieldset>
 
@@ -120,226 +111,22 @@
 
           <fieldset>
             <legend>Associations</legend>
-              <fieldset>
-                <label for="edition_policy_content_ids">Policies</label>
-                <input name="edition[policy_content_ids][]" type="hidden" value="" /><select multiple="multiple" class="chzn-select form-control" data-placeholder="Choose policies..." name="edition[policy_content_ids][]" id="edition_policy_content_ids">
-                <option value=""></option>
-                <option value="5d37adc5-7631-11e4-a3cb-005056011aef">Equality</option>
-              </select>
-            </fieldset>
 
-            <fieldset class="edition-topic-fields">
-              <label class="required" for="edition_topic_ids">Topics<span>*</span></label>
-              <input name="edition[topic_ids][]" type="hidden" value="" />
-              <select multiple="multiple" class="chzn-select form-control" data-placeholder="Choose topics..." name="edition[topic_ids][]" id="edition_topic_ids">
-                <option value="43">Arts and culture</option>
-              </select>
-            </fieldset>
+            <label for="edition_edition[lead_organisation_ids][]">Organisations</label>
 
-            <label for="edition_primary_mainstream_category_id">Primary detailed guidance category</label>
-            <select class="chzn-select form-control" data-placeholder="Choose a primary detailed guidance category..." name="edition[primary_mainstream_category_id]" id="edition_primary_mainstream_category_id">
+            <select multiple="multiple" name="edition[lead_organisation_ids][]" id="edition_lead_organisation_ids_1" class="chzn-select form-control" data-placeholder="Choose organisations…">
               <option value=""></option>
-              <optgroup label="Maritime vessels and work at sea">
-                <option value="29">Maritime and freshwater businesses</option>
-              </optgroup>
+              <option value="1025">Academy for Justice Commissioning</option>
             </select>
-
-            <label for="edition_other_mainstream_category_ids">Other detailed guidance categories</label>
-            <input name="edition[other_mainstream_category_ids][]" type="hidden" value="" />
-            <select multiple="multiple" class="chzn-select form-control" data-placeholder="Choose other detailed guidance categories..." name="edition[other_mainstream_category_ids][]" id="edition_other_mainstream_category_ids">
-              <option value=""></option>
-              <optgroup label="Maritime vessels and work at sea">
-                <option value="29">Maritime and freshwater businesses</option>
-              </optgroup>
-            </select>
-
-            <div class="form-group">
-              <label for="edition_need_ids">Maslow Need IDs (enter a comma-separated list)</label>
-              <input placeholder="Enter a comma-separated list of Maslow Need IDs" value="" class="form-control" type="text" name="edition[need_ids]" id="edition_need_ids" />
-            </div>
-
-            <fieldset class="edition-specialist-sector-fields">
-              <legend>Specialist tagging</legend>
-
-              <p>
-                <strong>Do not</strong> use these tags unless your department or agency has a specialist browse category set up.
-                <a href="https://insidegovuk.blog.gov.uk/2014/02/20/new-specialist-sector-option-in-publisher/">Read our blog post</a> for more information.
-              </p>
-
-              <label for="edition_primary_specialist_sector_tag">Primary specialist sector tag</label>
-
-              <select class="chzn-select form-control" data-placeholder="Choose a primary specialist sector…" name="edition[primary_specialist_sector_tag]" id="edition_primary_specialist_sector_tag">
-                <option value=""></option>
-                <optgroup label="Animal welfare">
-                  <option value="animal-welfare/pets">Animal welfare: Pets (draft)</option>
-                </optgroup>
-              </select>
-
-              <label for="edition_secondary_specialist_sector_tags">Additional specialist sectors</label>
-              <input name="edition[secondary_specialist_sector_tags][]" type="hidden" value="" />
-              <select multiple="multiple" class="chzn-select form-control" data-placeholder="Choose additional specialist sectors…" name="edition[secondary_specialist_sector_tags][]" id="edition_secondary_specialist_sector_tags">
-                <optgroup label="Animal welfare">
-                  <option value="animal-welfare/pets">Animal welfare: Pets (draft)</option>
-                </optgroup>
-              </select>
-            </fieldset>
-
-            <fieldset class="named">
-              <div class="row">
-
-                <fieldset class="named col-md-6 lead-organisations">
-                  <legend>Lead organisations</legend>
-
-                  <div class="form-group">
-                    <label for="edition_edition[lead_organisation_ids][]">
-                      <div class="add-label-margin">
-                        Organisation 1
-                      </div>
-                      <div class="normal">
-                        <select name="edition[lead_organisation_ids][]" id="edition_lead_organisation_ids_1" class="chzn-select-non-ie form-control" data-placeholder="Choose a lead organisation which produced this document...">
-                          <option value=""></option>
-                          <option value="1025">Academy for Justice Commissioning</option>
-                        </select>
-                      </div>
-                    </label>
-                  </div>
-
-                  <div class="form-group">
-                    <label for="edition_edition[lead_organisation_ids][]">
-                      <div class="add-label-margin">
-                        Organisation 2
-                      </div>
-                      <div class="normal">
-                        <select name="edition[lead_organisation_ids][]" id="edition_lead_organisation_ids_1" class="chzn-select-non-ie form-control" data-placeholder="Choose a lead organisation which produced this document...">
-                          <option value=""></option>
-                          <option value="1025">Academy for Justice Commissioning</option>
-                        </select>
-                      </div>
-                    </label>
-                  </div>
-
-                  <div class="form-group">
-                    <label for="edition_edition[lead_organisation_ids][]">
-                      <div class="add-label-margin">
-                        Organisation 3
-                      </div>
-                      <div class="normal">
-                        <select name="edition[lead_organisation_ids][]" id="edition_lead_organisation_ids_1" class="chzn-select-non-ie form-control" data-placeholder="Choose a lead organisation which produced this document...">
-                          <option value=""></option>
-                          <option value="1025">Academy for Justice Commissioning</option>
-                        </select>
-                      </div>
-                    </label>
-                  </div>
-
-                  <div class="form-group">
-                    <label for="edition_edition[lead_organisation_ids][]">
-                      <div class="add-label-margin">
-                        Organisation 4
-                      </div>
-                      <div class="normal">
-                        <select name="edition[lead_organisation_ids][]" id="edition_lead_organisation_ids_1" class="chzn-select-non-ie form-control" data-placeholder="Choose a lead organisation which produced this document...">
-                          <option value=""></option>
-                          <option value="1025">Academy for Justice Commissioning</option>
-                        </select>
-                      </div>
-                    </label>
-                  </div>
-                </fieldset>
-
-                <fieldset class="named col-md-6 supporting-organisations">
-                  <legend>Supporting organisations</legend>
-                  <label for="edition_edition[supporting_organisation_ids][]">
-                    <div class="form-group">
-                      <div class="add-label-margin">
-                        Organisation 1
-                      </div>
-                      <div class="normal">
-                        <select name="edition[supporting_organisation_ids][]" id="edition_supporting_organisation_ids_1" class="chzn-select-non-ie form-control" data-placeholder="Choose a supporting organisation which produced this document...">
-                          <option value=""></option>
-                          <option value="1025">Academy for Justice Commissioning</option>
-                        </select>
-                      </div>
-                    </div>
-                  </label>
-
-                  <label for="edition_edition[supporting_organisation_ids][]">
-                    <div class="form-group">
-                      <div class="add-label-margin">
-                        Organisation 2
-                      </div>
-                      <div class="normal">
-                        <select name="edition[supporting_organisation_ids][]" id="edition_supporting_organisation_ids_1" class="chzn-select-non-ie form-control" data-placeholder="Choose a supporting organisation which produced this document...">
-                          <option value=""></option>
-                          <option value="1025">Academy for Justice Commissioning</option>
-                        </select>
-                      </div>
-                    </div>
-                  </label>
-
-                  <label for="edition_edition[supporting_organisation_ids][]">
-                    <div class="form-group">
-                      <div class="add-label-margin">
-                        Organisation 3
-                      </div>
-                      <div class="normal">
-                        <select name="edition[supporting_organisation_ids][]" id="edition_supporting_organisation_ids_1" class="chzn-select-non-ie form-control" data-placeholder="Choose a supporting organisation which produced this document...">
-                          <option value=""></option>
-                          <option value="1025">Academy for Justice Commissioning</option>
-                        </select>
-                      </div>
-                    </div>
-                  </label>
-
-                  <label for="edition_edition[supporting_organisation_ids][]">
-                    <div class="form-group">
-                      <div class="add-label-margin">
-                        Organisation 4
-                      </div>
-                      <div class="normal">
-                        <select name="edition[supporting_organisation_ids][]" id="edition_supporting_organisation_ids_1" class="chzn-select-non-ie form-control" data-placeholder="Choose a supporting organisation which produced this document...">
-                          <option value=""></option>
-                          <option value="1025">Academy for Justice Commissioning</option>
-                        </select>
-                      </div>
-                    </div>
-                  </label>
-
-                  <label for="edition_edition[supporting_organisation_ids][]">
-                    <div class="form-group">
-                      <div class="add-label-margin">
-                        Organisation 5
-                      </div>
-                      <div class="normal">
-                        <select name="edition[supporting_organisation_ids][]" id="edition_supporting_organisation_ids_1" class="chzn-select-non-ie form-control" data-placeholder="Choose a supporting organisation which produced this document...">
-                          <option value=""></option>
-                          <option value="1025">Academy for Justice Commissioning</option>
-                        </select>
-                      </div>
-                    </div>
-                  </label>
-
-                  <label for="edition_edition[supporting_organisation_ids][]">
-                    <div class="form-group">
-                      <div class="add-label-margin">
-                        Organisation 6
-                      </div>
-                      <div class="normal">
-                        <select name="edition[supporting_organisation_ids][]" id="edition_supporting_organisation_ids_1" class="chzn-select-non-ie form-control" data-placeholder="Choose a supporting organisation which produced this document...">
-                          <option value=""></option>
-                          <option value="1025">Academy for Justice Commissioning</option>
-                        </select>
-                      </div>
-                    </div>
-                  </label>
-
-                </fieldset>
-              </div>
-            </fieldset>
 
             <label for="edition_related_detailed_guide_ids">Related guides</label>
             <input name="edition[related_detailed_guide_ids][]" type="hidden" value="" />
             <select multiple="multiple" class="chzn-select form-control" data-placeholder="Choose related detailed guides..." name="edition[related_detailed_guide_ids][]" id="edition_related_detailed_guide_ids">
+              <option value="476374">16 to 18 education: free meals</option>
+            </select>
+
+            <label for="edition_related_mainstream_content_url">Related mainstream content</label>
+            <select multiple="multiple" class="chzn-select form-control" data-placeholder="Choose related mainstream content..." name="edition[related_mainsteam_ids][]" id="edition_related_mainsteam_ids">
               <option value="476374">16 to 18 education: free meals</option>
             </select>
           </fieldset>
@@ -347,103 +134,80 @@
           <fieldset id="edition_attachment_fields" class="attachments">
             <legend>Attachments</legend>
             <p>
-              If you’d like to add an attachment to this document, please save
-              it first. You’ll then find a new tab at the top of the page that you
-              can use to upload, edit and delete attachments.
+              You can add an attachment once you've saved this document. An 'Attachments' tab will appear at the top of the page.
             </p>
-
-            <div class="control-group">
-              <label for="edition_alternative_format_provider_id">Email address for ordering attachment files in an alternative format</label>
-              <div class="controls">
-                <select class="chzn-select form-control" data-placeholder="Choose which organisation will provide alternative formats..." name="edition[alternative_format_provider_id]" id="edition_alternative_format_provider_id">
-                  <option value=""></option>
-                  <option value="1025">Academy for Justice Commissioning (academy@noms.gsi.gov.uk)</option>
-                </select>
-                <p class="help-block">
-                  If the email address you need isn’t here, it should be added to the relevant Department or Agency
-                </p>
-              </div>
-            </div>
           </fieldset>
 
-          <fieldset>
-            <legend>Related mainstream content</legend>
-            <div class="form-group">
-              <label for="edition_related_mainstream_content_url">Related mainstream content url</label>
-              <input class="form-control" type="text" name="edition[related_mainstream_content_url]" id="edition_related_mainstream_content_url" />
-            </div>
-            <div class="form-group">
-              <label for="edition_related_mainstream_content_title">Related mainstream content title</label>
-              <input class="form-control" type="text" name="edition[related_mainstream_content_title]" id="edition_related_mainstream_content_title" />
-            </div>
-            <div class="form-group">
-              <label for="edition_additional_related_mainstream_content_url">Additional related mainstream content url</label>
-              <input class="form-control" type="text" name="edition[additional_related_mainstream_content_url]" id="edition_additional_related_mainstream_content_url" />
-            </div>
-            <div class="form-group">
-              <label for="edition_additional_related_mainstream_content_title">Additional related mainstream content title</label>
-              <input class="form-control" type="text" name="edition[additional_related_mainstream_content_title]" id="edition_additional_related_mainstream_content_title" />
-            </div>
-          </fieldset>
+          <fieldset class="excluded_nations panel-group" id="excluded-nations">
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="">
+                <legend class="panel-title" id="excluded-nations-heading">
+                  <a role="button" data-toggle="collapse" data-parent="#excluded-nations" href="#excluded-nations-panel" aria-expanded="true" aria-controls="excluded-nations-panel">Excluded nations</a>
+                </legend>
+              </div>
 
-          <fieldset class="excluded_nations">
-            <legend>Excluded nations</legend>
+              <div id="excluded-nations-panel" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="excluded-nations-heading">
+                <div class="panel-body">
 
-            <div class="nation control-group" id="nation_2">
-              <div class="control">
-                <div class="checkbox">
-                  <label for="edition_nation_inapplicabilities_attributes_0_excluded">
-                    <input name="edition[nation_inapplicabilities_attributes][0][excluded]" type="hidden" value="0" />
-                    <input type="checkbox" value="1" name="edition[nation_inapplicabilities_attributes][0][excluded]" id="edition_nation_inapplicabilities_attributes_0_excluded" />Scotland
-                  </label>
+                  <div class="nation control-group" id="nation_2">
+                    <div class="control">
+                      <div class="checkbox">
+                        <label for="edition_nation_inapplicabilities_attributes_0_excluded">
+                          <input name="edition[nation_inapplicabilities_attributes][0][excluded]" type="hidden" value="0" />
+                          <input type="checkbox" value="1" name="edition[nation_inapplicabilities_attributes][0][excluded]" id="edition_nation_inapplicabilities_attributes_0_excluded" />Scotland
+                        </label>
+                      </div>
+                    </div>
+                    <div class="control">
+                      <div class="form-group">
+                        <label for="edition_nation_inapplicabilities_attributes_0_alternative_url">Alternative url</label>
+                        <input class="form-control" type="text" name="edition[nation_inapplicabilities_attributes][0][alternative_url]" id="edition_nation_inapplicabilities_attributes_0_alternative_url" />
+                      </div>
+                      <input type="hidden" value="2" name="edition[nation_inapplicabilities_attributes][0][nation_id]" id="edition_nation_inapplicabilities_attributes_0_nation_id" />
+                    </div>
+                  </div>
+
+                  <div class="nation control-group" id="nation_3">
+                    <div class="control">
+                      <div class="checkbox">
+                        <label for="edition_nation_inapplicabilities_attributes_1_excluded">
+                          <input name="edition[nation_inapplicabilities_attributes][1][excluded]" type="hidden" value="0" />
+                          <input type="checkbox" value="1" name="edition[nation_inapplicabilities_attributes][1][excluded]" id="edition_nation_inapplicabilities_attributes_1_excluded" />
+                          Wales
+                        </label>
+                      </div>
+                    </div>
+                    <div class="control">
+                      <div class="form-group">
+                        <label for="edition_nation_inapplicabilities_attributes_1_alternative_url">Alternative url</label>
+                        <input class="form-control" type="text" name="edition[nation_inapplicabilities_attributes][1][alternative_url]" id="edition_nation_inapplicabilities_attributes_1_alternative_url" />
+                      </div>
+                      <input type="hidden" value="3" name="edition[nation_inapplicabilities_attributes][1][nation_id]" id="edition_nation_inapplicabilities_attributes_1_nation_id" />
+                    </div>
+                  </div>
+
+                  <div class="nation control-group" id="nation_4">
+                    <div class="control">
+                      <div class="checkbox">
+                        <label for="edition_nation_inapplicabilities_attributes_2_excluded">
+                          <input name="edition[nation_inapplicabilities_attributes][2][excluded]" type="hidden" value="0" />
+                          <input type="checkbox" value="1" name="edition[nation_inapplicabilities_attributes][2][excluded]" id="edition_nation_inapplicabilities_attributes_2_excluded" />
+                          Northern Ireland
+                        </label>
+                      </div>
+                    </div>
+                    <div class="control">
+                      <div class="form-group">
+                        <label for="edition_nation_inapplicabilities_attributes_2_alternative_url">Alternative url</label>
+                        <input class="form-control" type="text" name="edition[nation_inapplicabilities_attributes][2][alternative_url]" id="edition_nation_inapplicabilities_attributes_2_alternative_url" />
+                      </div>
+                      <input type="hidden" value="4" name="edition[nation_inapplicabilities_attributes][2][nation_id]" id="edition_nation_inapplicabilities_attributes_2_nation_id" />
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <div class="control">
-                <div class="form-group">
-                  <label for="edition_nation_inapplicabilities_attributes_0_alternative_url">Alternative url</label>
-                  <input class="form-control" type="text" name="edition[nation_inapplicabilities_attributes][0][alternative_url]" id="edition_nation_inapplicabilities_attributes_0_alternative_url" />
-                </div>
-                <input type="hidden" value="2" name="edition[nation_inapplicabilities_attributes][0][nation_id]" id="edition_nation_inapplicabilities_attributes_0_nation_id" />
               </div>
             </div>
 
-            <div class="nation control-group" id="nation_3">
-              <div class="control">
-                <div class="checkbox">
-                  <label for="edition_nation_inapplicabilities_attributes_1_excluded">
-                    <input name="edition[nation_inapplicabilities_attributes][1][excluded]" type="hidden" value="0" />
-                    <input type="checkbox" value="1" name="edition[nation_inapplicabilities_attributes][1][excluded]" id="edition_nation_inapplicabilities_attributes_1_excluded" />
-                    Wales
-                  </label>
-                </div>
-              </div>
-              <div class="control">
-                <div class="form-group">
-                  <label for="edition_nation_inapplicabilities_attributes_1_alternative_url">Alternative url</label>
-                  <input class="form-control" type="text" name="edition[nation_inapplicabilities_attributes][1][alternative_url]" id="edition_nation_inapplicabilities_attributes_1_alternative_url" />
-                </div>
-                <input type="hidden" value="3" name="edition[nation_inapplicabilities_attributes][1][nation_id]" id="edition_nation_inapplicabilities_attributes_1_nation_id" />
-              </div>
-            </div>
-
-            <div class="nation control-group" id="nation_4">
-              <div class="control">
-                <div class="checkbox">
-                  <label for="edition_nation_inapplicabilities_attributes_2_excluded">
-                    <input name="edition[nation_inapplicabilities_attributes][2][excluded]" type="hidden" value="0" />
-                    <input type="checkbox" value="1" name="edition[nation_inapplicabilities_attributes][2][excluded]" id="edition_nation_inapplicabilities_attributes_2_excluded" />
-                    Northern Ireland
-                  </label>
-                </div>
-              </div>
-              <div class="control">
-                <div class="form-group">
-                  <label for="edition_nation_inapplicabilities_attributes_2_alternative_url">Alternative url</label>
-                  <input class="form-control" type="text" name="edition[nation_inapplicabilities_attributes][2][alternative_url]" id="edition_nation_inapplicabilities_attributes_2_alternative_url" />
-                </div>
-                <input type="hidden" value="4" name="edition[nation_inapplicabilities_attributes][2][nation_id]" id="edition_nation_inapplicabilities_attributes_2_nation_id" />
-              </div>
-            </div>
           </fieldset>
 
           <fieldset>
@@ -467,24 +231,38 @@
               </label>
             </div>
             <div class="scheduled_publication form-group form-inline">
-              <label for="edition_scheduled_publication">Scheduled publication</label><br />
-              <select id="edition_scheduled_publication_1i" name="edition[scheduled_publication(1i)]" class="date form-control">
-                <option value="2010">2010</option>
-              </select>
-              <select id="edition_scheduled_publication_2i" name="edition[scheduled_publication(2i)]" class="date form-control">
-                <option value="1">January</option>
-              </select>
-              <select id="edition_scheduled_publication_3i" name="edition[scheduled_publication(3i)]" class="date form-control">
-                <option value="1">1</option>
-              </select>
-              &mdash;
-              <select id="edition_scheduled_publication_4i" name="edition[scheduled_publication(4i)]" class="date form-control">
-                <option value="00">00</option>
-              </select>
-               :
-               <select id="edition_scheduled_publication_5i" name="edition[scheduled_publication(5i)]" class="date form-control">
-                <option value="00">00</option>
-              </select>
+              <fieldset>
+                <div class="form-date">
+                  <div class="form-group form-group-day">
+                    <label for="first-published-day">Day</label>
+                    <input type="text" name="first-published-day" class="form-control" />
+                  </div>
+
+                  <div class="form-group form-group-month">
+                    <label for="first-published-day">Month</label>
+                    <input type="text" name="first-published-month" class="form-control" />
+                  </div>
+
+                  <div class="form-group form-group-year">
+                    <label for="first-published-day">Year</label>
+                    <input type="text" name="first-published-year" class="form-control" />
+                  </div>
+                </div>
+
+                <p class="form-control-static">at</p>
+
+                <div class="form-date">
+                  <div class="form-group form-group-hour">
+                    <label for="first-published-hour">Hour</label>
+                    <input type="text" name="first-published-hour" class="form-control" />
+                  </div>
+
+                  <div class="form-group form-group-minute">
+                    <label for="first-published-minute">Minute</label>
+                    <input type="text" name="first-published-minute" class="form-control" />
+                  </div>
+                </div>
+              </fieldset>
             </div>
           </fieldset>
 
