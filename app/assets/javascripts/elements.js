@@ -27,7 +27,7 @@ function ShowHideContent() {
         $radio.on('click', function () {
 
           // Select radio buttons in the same group
-          $radio.closest('form').find(".block-label input[name=" + self.escapeElementName($radioGroupName) + "]").each(function () {
+          $radio.closest('form').find(".show-hide input[name=" + self.escapeElementName($radioGroupName) + "]").each(function () {
             var $this = $(this);
 
             var groupDataTarget = $this.parent('label').attr('data-target');
