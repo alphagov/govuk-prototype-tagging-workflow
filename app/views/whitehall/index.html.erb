@@ -87,24 +87,30 @@
             </div>
           </fieldset>
 
-          <fieldset id="image_fields" class="images multiple_file_uploads">
-            <legend>Images</legend>
-
-            <div class="file_upload well">
-              <h3 class="remove-top-margin">New image</h3>
-
-              <div class="form-group">
-                <label for="edition_images_attributes_0_image_data_attributes_file">File</label>
-                <input class="js-upload-image-input" type="file" name="edition[images_attributes][0][image_data_attributes][file]" id="edition_images_attributes_0_image_data_attributes_file" />
-                <input type="hidden" name="edition[images_attributes][0][image_data_attributes][file_cache]" id="edition_images_attributes_0_image_data_attributes_file_cache" />
+          <fieldset class="images multiple_file_uploads panel-group" id="image-fields">
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="">
+                <legend class="panel-title" id="images-heading">
+                  <a role="button" data-toggle="collapse" data-parent="#image-fields" href="#image-fields-panel" aria-expanded="true" aria-controls="image-fields-panel">Images</a>
+                </legend>
               </div>
-              <div class="form-group">
-                <label for="edition_images_attributes_0_alt_text">Alt text</label>
-                <input class="form-control" type="text" name="edition[images_attributes][0][alt_text]" id="edition_images_attributes_0_alt_text" />
-              </div>
-              <div class="form-group">
-                <label for="edition_images_attributes_0_caption">Caption</label>
-                <textarea rows="2" class="form-control" name="edition[images_attributes][0][caption]" id="edition_images_attributes_0_caption"></textarea>
+
+              <div id="image-fields-panel" class="panel-collapse collapse" role="tabpanel" aria-labelledby="image-fields-heading">
+                <div class="panel-body">
+                  <div class="form-group">
+                    <label for="edition_images_attributes_0_image_data_attributes_file">File</label>
+                    <input class="js-upload-image-input" type="file" name="edition[images_attributes][0][image_data_attributes][file]" id="edition_images_attributes_0_image_data_attributes_file" />
+                    <input type="hidden" name="edition[images_attributes][0][image_data_attributes][file_cache]" id="edition_images_attributes_0_image_data_attributes_file_cache" />
+                  </div>
+                  <div class="form-group">
+                    <label for="edition_images_attributes_0_alt_text">Alt text</label>
+                    <input class="form-control" type="text" name="edition[images_attributes][0][alt_text]" id="edition_images_attributes_0_alt_text" />
+                  </div>
+                  <div class="form-group">
+                    <label for="edition_images_attributes_0_caption">Caption</label>
+                    <textarea rows="2" class="form-control" name="edition[images_attributes][0][caption]" id="edition_images_attributes_0_caption"></textarea>
+                  </div>
+                </div>
               </div>
             </div>
           </fieldset>
