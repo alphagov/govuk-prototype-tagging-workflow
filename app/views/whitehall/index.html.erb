@@ -61,28 +61,24 @@
 
             <div class="js-show-first-published show-first-published js-hidden" id="js-show-first-published">
               <fieldset>
-                <p class="required" for="edition_first_published_at">Its original publication date was <span>*</span></p>
+                <p for="edition_first_published_at">Its original publication date was</p>
 
-                <div class="form-date grid-row">
-                  <div class="form-group form-group-day">
-                    <label for="first-published-day">Day</label>
-                    <input type="text" name="first-published-day" class="form-control" />
-                  </div>
+                <div class="form-inline form-date">
+                  <label for="publication-day" class="visuallyhidden">Day</label>
+                  <input type="text" name="publication-day" id="publication-day" class="form-day form-control">
 
-                  <div class="form-group form-group-month">
-                    <label for="first-published-day">Month</label>
-                    <input type="text" name="first-published-month" class="form-control" />
-                  </div>
+                  <label for="publication-month" class="visuallyhidden">Month</label>
+                  <input type="text" name="publication-month" id="publication-month" class="form-month form-control">
 
-                  <div class="form-group form-group-year">
-                    <label for="first-published-day">Year</label>
-                    <input type="text" name="first-published-year" class="form-control" />
-                  </div>
-
+                  <label for="publication-year" class="visuallyhidden">Year</label>
+                  <input type="text" name="publication-year" id="publication-year" class="form-year form-control">
+                  —
+                  <label for="publication-hour" class="visuallyhidden">Hour</label>
+                  <input type="text" name="publication-hour" id="publication-hour" class="form-hour form-control">
+                  :
+                  <label for="publication-minute" class="visuallyhidden">Minute</label>
+                  <input type="text" name="publication-minute" id="publication-minute" class="form-minute form-control">
                 </div>
-
-                <p>Only complete this field if the document is not new.</p>
-
               </fieldset>
             </div>
           </fieldset>
@@ -231,44 +227,29 @@
             <legend>Scheduled publication</legend>
             <input type="hidden" name="scheduled_publication_active" id="" value="0" />
             <div class="checkbox">
-              <label class="checkbox js-toggle-scheduled-publication-date-picker" for="scheduled_publication_active">
+              <label class="checkbox show-hide" for="scheduled_publication_active" data-target="scheduled-publication-date">
                 <input type="checkbox" name="scheduled_publication_active" id="scheduled_publication_active" value="1"
                 /> Schedule for publication
               </label>
             </div>
-            <div class="scheduled_publication form-group form-inline">
-              <fieldset>
-                <div class="form-date">
-                  <div class="form-group form-group-day">
-                    <label for="first-published-day">Day</label>
-                    <input type="text" name="first-published-day" class="form-control" />
-                  </div>
 
-                  <div class="form-group form-group-month">
-                    <label for="first-published-day">Month</label>
-                    <input type="text" name="first-published-month" class="form-control" />
-                  </div>
+            <div class="scheduled_publication js-hidden" id="scheduled-publication-date">
+              <div class="form-inline form-date">
+                <label for="scheduled-publication-day" class="visuallyhidden">Day</label>
+                <input type="text" name="scheduled-publication-day" id="scheduled-publication-day" class="form-day form-control">
 
-                  <div class="form-group form-group-year">
-                    <label for="first-published-day">Year</label>
-                    <input type="text" name="first-published-year" class="form-control" />
-                  </div>
-                </div>
+                <label for="scheduled-publication-month" class="visuallyhidden">Month</label>
+                <input type="text" name="scheduled-publication-month" id="scheduled-publication-month" class="form-month form-control">
 
-                <p class="form-control-static">at</p>
-
-                <div class="form-date">
-                  <div class="form-group form-group-hour">
-                    <label for="first-published-hour">Hour</label>
-                    <input type="text" name="first-published-hour" class="form-control" />
-                  </div>
-
-                  <div class="form-group form-group-minute">
-                    <label for="first-published-minute">Minute</label>
-                    <input type="text" name="first-published-minute" class="form-control" />
-                  </div>
-                </div>
-              </fieldset>
+                <label for="scheduled-publication-year" class="visuallyhidden">Year</label>
+                <input type="text" name="scheduled-publication-year" id="scheduled-publication-year" class="form-year form-control">
+                —
+                <label for="scheduled-publication-hour" class="visuallyhidden">Hour</label>
+                <input type="text" name="scheduled-publication-hour" id="scheduled-publication-hour" class="form-hour form-control">
+                :
+                <label for="scheduled-publication-minute" class="visuallyhidden">Minute</label>
+                <input type="text" name="scheduled-publication-minute" id="scheduled-publication-minute" class="form-minute form-control">
+              </div>
             </div>
           </fieldset>
 
