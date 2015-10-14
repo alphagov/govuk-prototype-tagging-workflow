@@ -5,6 +5,8 @@ class WhitehallController < ApplicationController
 
   def tagging
     @topics = JSON.parse(File.open('app/data/topics.json').read)['links']['children']
+
+    @policies = JSON.parse(File.open('app/data/policies.json').read)['results'].sort_by! { |r| r['title'] }
   end
 end
 

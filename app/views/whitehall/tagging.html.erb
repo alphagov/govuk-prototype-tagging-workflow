@@ -26,7 +26,10 @@
             <input name="edition[policy_content_ids][]" type="hidden" value="" />
             <select multiple="multiple" class="chzn-select form-control" data-placeholder="Choose policies…" name="edition[policy_content_ids][]" id="edition_policy_content_ids">
               <option value=""></option>
-              <option value="5d37adc5-7631-11e4-a3cb-005056011aef">Equality</option>
+
+              <% @policies.each do |pol| %>
+              <option value="<%= pol['slug'] %>"><%= pol['title'] %></option>
+              <% end %>
             </select>
 
             <label class="required" for="edition_topic_ids">Policy Areas (this is the new name for Topics)<span>*</span></label>
