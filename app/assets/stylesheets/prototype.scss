@@ -42,8 +42,13 @@
 }
 
 form {
-  fieldset {
+  fieldset.panel-group {
+    padding-top: 27px;
+    border-top: 1px solid #eee;
+
     legend {
+      font-size: 21px;
+
       &.panel-title {
         padding-top: 0;
         border-top: none;
