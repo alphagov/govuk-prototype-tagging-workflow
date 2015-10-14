@@ -31,6 +31,10 @@ $(document).ready(function() {
   });
 
   $('#chosen-subtopics').chosen().change(function(e, p) {
-    console.log(e);
+    if (p.deselected != null) {
+      $('#'+p.deselected+'-item').toggleClass('active');
+    } else if (p.selected != null) {
+      $('#'+p.selected+'-item').toggleClass('active');
+    }
   });
 });

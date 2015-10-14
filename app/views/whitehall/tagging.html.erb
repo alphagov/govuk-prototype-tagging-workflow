@@ -61,7 +61,7 @@
                 <% @topics.each do |topic| %>
                   <div class="list-group tag-explorer-topics-level-2 js-hidden" id="<%= topic['base_path'].parameterize %>">
                     <% topic['links']['children'].each do |subtopic| %>
-                      <a href="<%= subtopic['base_path'].parameterize %>" class="list-group-item"><%= subtopic['title'] %></a>
+                      <a href="<%= subtopic['base_path'].parameterize %>" class="list-group-item" id="<%= subtopic['base_path'].parameterize %>-item"><%= subtopic['title'] %></a>
                     <% end %>
                   </div>
                 <% end %>
@@ -75,7 +75,7 @@
               <% @topics.each do |topic| %>
               <optgroup label="<%= topic['title'] %>">
                 <% topic['links']['children'].each do |subtopic| %>
-                <option value="<%= subtopic['base_path'].parameterize %>"><%= subtopic['title'] %></option>
+                <option value="<%= subtopic['base_path'].parameterize %>"><%= topic['title'] %> &gt; <%= subtopic['title'] %></option>
                 <% end %>
               </optgroup>
               <% end %>
