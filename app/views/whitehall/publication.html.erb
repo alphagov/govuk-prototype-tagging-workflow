@@ -56,15 +56,7 @@
 
           <%= render 'partials/scheduled_publication' %>
 
-          <div class="publishing-controls well">
-            <div class="form-actions">
-              <a href="/tagging" class="btn btn-primary btn-lg">Tag document</a>
-              <a href="#" class="btn btn-primary btn-lg">Save draft</a>
-              <a href="#" class="btn btn-primary btn-lg">Save and continue editing</a>
-
-              <span class="or_cancel"> or <a href="#">cancel</a></span>
-            </div>
-          </div>
+          <%= render 'partials/controls', show_tagging_button: true %>
         </form>
       </div>
     </div>
