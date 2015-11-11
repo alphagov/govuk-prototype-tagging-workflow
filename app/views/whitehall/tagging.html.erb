@@ -1,4 +1,3 @@
-
 <%# blocks for govuk_admin_template %>
 <% content_for :page_title do %>GOV.UK admin prototype<% end %>
 
@@ -14,7 +13,7 @@
 
     <div class="tabbable">
       <ul class="nav nav-tabs add-bottom-margin">
-        <li><a href="/">Document</a></li>
+        <li><%= link_to "Document", :back %>
         <li class="active"><a href="/tagging">Tagging</a></li>
       </ul>
 
