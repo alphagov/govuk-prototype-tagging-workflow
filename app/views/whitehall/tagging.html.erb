@@ -20,7 +20,8 @@
       <div class="tab-content">
         <form class="edition-form js-edition-form" id="new_edition" enctype="multipart/form-data" action="/government/admin/detailed-guides" accept-charset="UTF-8" method="post">
 
-          <%= render 'partials/policies', locals: { policy_areas: policy_areas, policies: policies } %>
+          <% tagging_page = "partials/#{session[:version]}" %>
+          <%= render tagging_page %>
 
           <%= render 'partials/topic_subtopic', locals: { topics: topics } %>
 
