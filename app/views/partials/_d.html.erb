@@ -1,0 +1,8 @@
+<label for="edition_edition[world_locations][]">World locations</label>
+
+<select multiple="multiple" name="edition[world_locations][]" id="edition_world_locations_1" class="chzn-select form-control" data-placeholder="Choose locations…">
+  <option value=""></option>
+  <% locations.each do |location| %>
+  <option value="<%= location['slug'] %>"><%= location['title'] %></option>
+  <% end %>
+</select>

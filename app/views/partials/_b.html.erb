@@ -1,0 +1,22 @@
+<fieldset>
+  <legend class="visuallyhidden">Polices and policy areas</legend>
+  <label for="edition_policy_content_ids">Policies</label>
+  <input name="edition[policy_content_ids][]" type="hidden" value="" />
+  <select multiple="multiple" class="chzn-select form-control" data-placeholder="Choose policies…" name="edition[policy_content_ids][]" id="edition_policy_content_ids">
+    <option value=""></option>
+
+    <% policies.each do |pol| %>
+    <option value="<%= pol['slug'] %>"><%= pol['title'] %></option>
+    <% end %>
+  </select>
+
+  <label class="required" for="edition_topic_ids">Policy Areas (this is the new name for Topics)<span>*</span></label>
+  <input name="edition[topic_ids][]" type="hidden" value="" />
+  <select multiple="multiple" class="chzn-select form-control" data-placeholder="Choose topics…" name="edition[topic_ids][]" id="edition_topic_ids">
+    <option value=""></option>
+
+    <% policy_areas.each do |pol| %>
+    <option value="<%= pol['slug'] %>"><%= pol['title'] %></option>
+    <% end %>
+  </select>
+</fieldset>
