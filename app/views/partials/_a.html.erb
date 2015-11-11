@@ -1,0 +1,8 @@
+<label for="edition_edition[lead_organisation_ids][]">Organisations</label>
+
+<select multiple="multiple" name="edition[lead_organisation_ids][]" id="edition_lead_organisation_ids_1" class="chzn-select form-control" data-placeholder="Choose organisations…">
+  <option value=""></option>
+  <% organisations.each do |org| %>
+  <option value="<%= org['slug'] %>"><%= org['title'] %></option>
+  <% end %>
+</select>
