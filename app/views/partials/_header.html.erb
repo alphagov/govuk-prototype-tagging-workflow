@@ -1,0 +1,77 @@
+<header class="
+    masthead
+    navbar
+    navbar-default
+    navbar-inverse
+    navbar-static-top
+    <% if environment_style %>environment-indicator<% end %>
+    add-bottom-margin" role="banner">
+    <div class="navbar-container container-fluid">
+      <div class="navbar-header">
+        <%# Bootstrap toggle for collapsed navbar content, used at smaller widths %>
+        <a class="navbar-toggle" data-toggle="collapse" data-target="header .navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        <%= link_to "GOV.UK Whitehall", "/", :class => 'navbar-brand' %>
+        <% if environment_label %>
+          <div class="environment-label">
+            <%= environment_label %>
+          </div>
+        <% end %>
+      </div>
+      <nav role="navigation" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li><%= link_to "Dashboard", "/" %></li>
+          <li><%= link_to "View website", "/", class: "open_website" %></li>
+        </ul>
+        <div class="navbar-text pull-right remove-bottom-margin">
+          <ul class="list-inline">
+            <li>
+              <%= link_to "Jemima", "/", id: "#user_settings" %>
+            </li>
+            <li>
+              <%= link_to "Logout", "/auth/gds/sign_out" %>
+            </li>
+            <li>
+              <a href="/government/admin/users">All users</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <div class="container-fluid">
+      <ul id="global-nav" class="masthead-tabs list-unstyled">
+        <li class="masthead-tab-item js-create-new create-new">
+          <a href="#new-document-menu" class="toggler" id="new-document-label">New document</a>
+          <ul class="masthead-menu list-unstyled visuallyhidden" id="new-document-menu" role="menu" aria-labelledby="new-document-label"><li class="masthead-menu-item"><a title="Create Consultation" role="menuitem" href="/government/admin/consultations/new">Consultation</a></li><li class="masthead-menu-item"><a title="Create Publication" role="menuitem" href="/government/admin/publications/new">Publication</a></li><li class="masthead-menu-item"><a title="Create News Article" role="menuitem" href="/government/admin/news/new">News article</a></li><li class="masthead-menu-item"><a title="Create Speech" role="menuitem" href="/government/admin/speeches/new">Speech</a></li><li class="masthead-menu-item"><a title="Create Detailed Guide" role="menuitem" href="/government/admin/detailed-guides/new">Detailed guide</a></li><li class="masthead-menu-item"><a title="Create Document Collection" role="menuitem" href="/government/admin/collections/new">Document collection</a></li><li class="masthead-menu-item"><a title="Create Fatality Notice" role="menuitem" href="/government/admin/fatalities/new">Fatality notice</a></li><li class="masthead-menu-item"><a title="Create Case Study" role="menuitem" href="/government/admin/case-studies/new">Case study</a></li><li class="masthead-menu-item"><a title="Create Statistical Data Set" role="menuitem" href="/government/admin/statistical-data-sets/new">Statistical data set</a></li><li class="masthead-menu-item"><a title="Create World Location News Article" role="menuitem" href="/government/admin/world-location-news/new">World location news article</a></li></ul>
+        </li>
+        <li class="masthead-tab-item "><a href="/government/admin/editions">Documents</a></li>
+        <li class="masthead-tab-item "><a href="/government/admin/statistics_announcements">Statistics announcements</a></li>
+        <li class="masthead-tab-item "><a href="/government/admin/organisations/ministry-of-defence/features">Featured documents</a></li>
+        <li class="masthead-tab-item "><a href="/government/admin/organisations/ministry-of-defence/corporate_information_pages">Corporate information</a></li>
+        <li class="js-more-nav masthead-tab-item toggleable">
+          <a href="#more-links-menu" id="more-links-label" class="toggler" tabindex="0">More</a>
+          <ul id="more-links-menu" class="masthead-menu masthead-menu-right unstyled visuallyhidden" role="menu" aria-labelledby="more-links-label">
+            <li class="masthead-menu-item"><a role="menuitem" href="/government/admin/organisations">Departments &amp; agencies</a></li>
+            <li class="masthead-menu-item"><a role="menuitem" href="/government/admin/groups">Groups</a></li>
+            <li class="masthead-menu-item"><a role="menuitem" href="/government/admin/roles">Roles</a></li>
+            <li class="masthead-menu-item"><a role="menuitem" href="/government/admin/people">People</a></li>
+            <li class="masthead-menu-item"><a role="menuitem" href="/government/admin/topics">Policy Areas</a></li>
+            <li class="masthead-menu-item"><a role="menuitem" href="/government/admin/topical-events">Topical events</a></li>
+            <li class="masthead-menu-item"><a role="menuitem" href="/government/admin/worldwide_organisations">Worldwide organisations</a></li>
+            <li class="masthead-menu-item"><a role="menuitem" href="/government/admin/world_locations">World locations</a></li>
+            <li class="masthead-menu-item"><a role="menuitem" href="/government/admin/operational_fields">Fields of operation</a></li>
+            <li class="masthead-menu-item"><a role="menuitem" href="/government/admin/cabinet_ministers">Cabinet ministers order</a></li>
+            <li class="masthead-menu-item"><a role="menuitem" href="/government/admin/governments">Governments</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <section class="notices">
+    </section>
+  </header>

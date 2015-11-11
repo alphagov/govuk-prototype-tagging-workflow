@@ -1,3 +1,6 @@
+<% environment_style = GovukAdminTemplate.environment_style %>
+<% environment_label = GovukAdminTemplate.environment_label %>
+
 <% content_for :app_title do %>GOV.UK admin prototype<% end %>
 <% content_for :app_home_path, govuk_admin_template_engine_path %>
 
@@ -12,6 +15,10 @@
     GOVUK.init(GOVUK.adminGlobalInitialiser);
   });
   </script>
+<% end %>
+
+<% content_for :navbar do %>
+  <%= render partial: 'partials/header', locals: { environment_style: environment_style, environment_label: environment_label } %>
 <% end %>
 
 <%# use the govuk_admin_template layout %>
