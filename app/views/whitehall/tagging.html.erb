@@ -28,7 +28,7 @@
             <select multiple="multiple" class="chzn-select form-control" data-placeholder="Choose policies…" name="edition[policy_content_ids][]" id="edition_policy_content_ids">
               <option value=""></option>
 
-              <% @policies.each do |pol| %>
+              <% policies.each do |pol| %>
               <option value="<%= pol['slug'] %>"><%= pol['title'] %></option>
               <% end %>
             </select>
@@ -38,7 +38,7 @@
             <select multiple="multiple" class="chzn-select form-control" data-placeholder="Choose topics…" name="edition[topic_ids][]" id="edition_topic_ids">
               <option value=""></option>
 
-              <% @policy_areas.each do |pol| %>
+              <% policy_areas.each do |pol| %>
               <option value="<%= pol['slug'] %>"><%= pol['title'] %></option>
               <% end %>
             </select>
@@ -56,14 +56,14 @@
 
               <div class="tag-container">
                 <div class="list-group tag-explorer-topics-level-1">
-                  <% @topics.each do |topic| %>
+                  <% topics.each do |topic| %>
                     <a href="#<%= topic['base_path'].parameterize %>" class="list-group-item"><%= topic['title'] %></a>
                   <% end %>
                 </div>
               </div>
 
               <div class="tag-container">
-                <% @topics.each do |topic| %>
+                <% topics.each do |topic| %>
                   <div class="list-group tag-explorer-topics-level-2 js-hidden" id="<%= topic['base_path'].parameterize %>">
                     <% topic['links']['children'].each do |subtopic| %>
                       <a href="<%= subtopic['base_path'].parameterize %>" class="list-group-item" id="<%= subtopic['base_path'].parameterize %>-item"><%= subtopic['title'] %></a>
@@ -77,7 +77,7 @@
 
             <select multiple="multiple" class="chzn-select form-control" data-placeholder="No subtopics currently chosen" name="edition[primary_specialist_sector_tag]" id="chosen-subtopics">
               <option value=""></option>
-              <% @topics.each do |topic| %>
+              <% topics.each do |topic| %>
               <optgroup label="<%= topic['title'] %>">
                 <% topic['links']['children'].each do |subtopic| %>
                 <option value="<%= subtopic['base_path'].parameterize %>"><%= topic['title'] %> &gt; <%= subtopic['title'] %></option>

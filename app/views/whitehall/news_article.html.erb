@@ -1,0 +1,77 @@
+
+<%# blocks for govuk_admin_template %>
+<% content_for :page_title do %>GOV.UK admin prototype<% end %>
+
+<% content_for :content do %>
+
+<div class="row">
+  <section class="col-md-8">
+    <h1>Create publication</h1>
+    <div class="format-advice">
+      <p><strong>Use this format for:</strong> Guidance for professional or specialist users so that they can complete a defined task.</p>
+    </div>
+
+    <div class="tabbable">
+      <ul class="nav nav-tabs add-bottom-margin">
+        <li class="active"><a href="/">Document</a></li>
+      </ul>
+
+      <div class="tab-content">
+        <form class="edition-form js-edition-form" id="new_edition" enctype="multipart/form-data" action="/government/admin/detailed-guides" accept-charset="UTF-8" method="post">
+
+                    <fieldset>
+            <%= render 'partials/publication_type' %>
+
+            <%= render 'partials/title' %>
+
+            <%= render 'partials/summary' %>
+
+            <%= render 'partials/body' %>
+          </fieldset>
+
+          <%= render 'partials/first_published' %>
+
+          <%= render 'partials/images' %>
+
+          <fieldset>
+            <legend>Associations</legend>
+
+            <% render partial: 'partials/organisations', locals: { organisations: organisations } %>
+
+            <%= render 'partials/related_guides' %>
+
+            <%= render 'partials/related_mainstream' %>
+          </fieldset>
+
+          <fieldset id="edition_attachment_fields" class="attachments">
+            <legend>Attachments</legend>
+            <p>
+              You can add an attachment once you've saved this document. An 'Attachments' tab will appear at the top of the page.
+            </p>
+          </fieldset>
+
+          <%= render 'partials/excluded_nations' %>
+
+          <%= render 'partials/access_limiting' %>
+
+          <%= render 'partials/scheduled_publication' %>
+
+          <div class="publishing-controls well">
+            <div class="form-actions">
+              <a href="/tagging" class="btn btn-primary btn-lg">Tag document</a>
+              <a href="#" class="btn btn-primary btn-lg">Save draft</a>
+              <a href="#" class="btn btn-primary btn-lg">Save and continue editing</a>
+
+              <span class="or_cancel"> or <a href="#">cancel</a></span>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</div>
+
+<% end %>
+
+
+<%= render :template => 'layouts/govuk_admin_template' %>

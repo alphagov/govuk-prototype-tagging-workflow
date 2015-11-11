@@ -1,0 +1,29 @@
+<fieldset>
+  <legend>Scheduled publication</legend>
+  <input type="hidden" name="scheduled_publication_active" id="" value="0" />
+  <div class="checkbox">
+    <label class="checkbox show-hide" for="scheduled_publication_active" data-target="scheduled-publication-date">
+      <input type="checkbox" name="scheduled_publication_active" id="scheduled_publication_active" value="1"
+      /> Schedule for publication
+    </label>
+  </div>
+
+  <div class="scheduled_publication js-hidden" id="scheduled-publication-date">
+    <div class="form-inline form-date">
+      <label for="scheduled-publication-day" class="visuallyhidden">Day</label>
+      <input type="text" name="scheduled-publication-day" id="scheduled-publication-day" class="form-day form-control">
+
+      <label for="scheduled-publication-month" class="visuallyhidden">Month</label>
+      <input type="text" name="scheduled-publication-month" id="scheduled-publication-month" class="form-month form-control">
+
+      <label for="scheduled-publication-year" class="visuallyhidden">Year</label>
+      <input type="text" name="scheduled-publication-year" id="scheduled-publication-year" class="form-year form-control">
+      —
+      <label for="scheduled-publication-hour" class="visuallyhidden">Hour</label>
+      <input type="text" name="scheduled-publication-hour" id="scheduled-publication-hour" class="form-hour form-control">
+      :
+      <label for="scheduled-publication-minute" class="visuallyhidden">Minute</label>
+      <input type="text" name="scheduled-publication-minute" id="scheduled-publication-minute" class="form-minute form-control">
+    </div>
+  </div>
+</fieldset>
