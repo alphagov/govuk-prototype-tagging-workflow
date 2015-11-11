@@ -36,11 +36,19 @@
           <fieldset>
             <legend>Associations</legend>
 
-            <% render partial: 'partials/organisations', locals: { organisations: organisations } %>
+            <%= render partial: 'partials/organisations', locals: { organisations: organisations } %>
+
+            <%= render partial: 'partials/ministers', locals: { ministers: ministers } %>
 
             <%= render 'partials/related_guides' %>
 
             <%= render 'partials/related_mainstream' %>
+
+            <%= render 'partials/statistical_data_set' %>
+
+            <%= render 'partials/topical_event' %>
+
+
           </fieldset>
 
           <fieldset id="edition_attachment_fields" class="attachments">
@@ -56,7 +64,14 @@
 
           <%= render 'partials/scheduled_publication' %>
 
-          <%= render 'partials/controls', show_tagging_button: true %>
+          <div class="publishing-controls well">
+            <div class="form-actions">
+              <a href="/publication_tagging" class="btn btn-primary btn-lg">Tag document</a>
+              <a href="#" class="btn btn-primary btn-lg">Save</a>
+
+              <span class="or_cancel"> or <a href="#">cancel</a></span>
+            </div>
+          </div>
         </form>
       </div>
     </div>

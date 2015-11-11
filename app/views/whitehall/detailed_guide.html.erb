@@ -20,8 +20,6 @@
         <form class="edition-form js-edition-form" id="new_edition" enctype="multipart/form-data" action="/government/admin/detailed-guides" accept-charset="UTF-8" method="post">
 
           <fieldset>
-            <%= render 'partials/publication_type' %>
-
             <%= render 'partials/title' %>
 
             <%= render 'partials/summary' %>
@@ -41,6 +39,8 @@
             <%= render 'partials/related_guides' %>
 
             <%= render 'partials/related_mainstream' %>
+
+            <%= render 'partials/need_ids' %>
           </fieldset>
 
           <fieldset id="edition_attachment_fields" class="attachments">
@@ -56,7 +56,15 @@
 
           <%= render 'partials/scheduled_publication' %>
 
-          <%= render 'partials/controls', show_tagging_button: true %>
+          <div class="publishing-controls well">
+            <div class="form-actions">
+              <a href="/detailed_guide_tagging" class="btn btn-primary btn-lg">Tag document</a>
+              <a href="#" class="btn btn-primary btn-lg">Save</a>
+
+              <span class="or_cancel"> or <a href="#">cancel</a></span>
+            </div>
+          </div>
+
 
         </form>
       </div>
