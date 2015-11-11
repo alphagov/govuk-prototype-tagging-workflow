@@ -11,7 +11,11 @@ Rails.application.routes.draw do
   #   get 'products/:id' => 'catalog#view'
 
   get 'detailed_guide' => 'whitehall#detailed_guide'
+  get 'detailed_guide/tagging' => 'whitehall#detailed_guide_tagging'
+
   get 'publication'    => 'whitehall#publication'
+  get 'publication/tagging'    => 'whitehall#publication_tagging'
+
   get 'news_article'   => 'whitehall#news_article'
 
   get 'tagging' => 'whitehall#tagging'

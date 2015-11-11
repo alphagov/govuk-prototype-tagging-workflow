@@ -5,7 +5,7 @@
 
 <div class="row">
   <section class="col-md-8">
-    <h1>Create detailed guide</h1>
+    <h1>Create publication</h1>
 
     <div class="format-advice">
       <p><strong>Use this format for:</strong> Guidance for professional or specialist users so that they can complete a defined task.</p>
@@ -20,8 +20,7 @@
       <div class="tab-content">
         <form class="edition-form js-edition-form" id="new_edition" enctype="multipart/form-data" action="/government/admin/detailed-guides" accept-charset="UTF-8" method="post">
 
-          <% tagging_page = "partials/#{session[:version]}" %>
-          <%= render tagging_page %>
+          <%= render 'partials/policies' %>
 
           <%= render 'partials/topic_subtopic', locals: { topics: topics } %>
 
