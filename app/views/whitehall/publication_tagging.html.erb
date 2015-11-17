@@ -28,8 +28,8 @@
 </div>
 <% end %>
 
-<% content_for :sidebar %>
-<%= render 'partials/sidebar' %>
+<% content_for :sidebar do %>
+  <%= render 'partials/sidebar' %>
 <% end %>
 
 <%= render :template => 'layouts/two_column' %>
