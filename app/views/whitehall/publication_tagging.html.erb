@@ -1,41 +1,35 @@
 <%# blocks for govuk_admin_template %>
 <% content_for :page_title do %>GOV.UK admin prototype<% end %>
 
-<% content_for :content do %>
+<% content_for :main_column do %>
+<h1>Create publication</h1>
 
-<div class="row">
-  <section class="col-md-8">
-    <h1>Create publication</h1>
-
-    <div class="format-advice">
-      <p><strong>Use this format for:</strong> Guidance for professional or specialist users so that they can complete a defined task.</p>
-    </div>
-
-    <div class="tabbable">
-      <ul class="nav nav-tabs add-bottom-margin">
-        <li><%= link_to "Document", :back %>
-        <li class="active"><a href="/tagging">Tagging</a></li>
-      </ul>
-
-      <div class="tab-content">
-        <form class="edition-form js-edition-form" id="new_edition" enctype="multipart/form-data" action="/government/admin/detailed-guides" accept-charset="UTF-8" method="post">
-
-          <%= render 'partials/policies' %>
-
-          <%= render 'partials/topic_subtopic', locals: { topics: topics } %>
-
-          <%= render 'partials/controls', show_tagging_button: false %>
-
-        </form>
-      </div>
-    </div>
-  </section>
-  <div class="col-md-4">
-    <%= render 'partials/sidebar' %>
-  </div>
+<div class="format-advice">
+  <p><strong>Use this format for:</strong> Guidance for professional or specialist users so that they can complete a defined task.</p>
 </div>
 
+<div class="tabbable">
+  <ul class="nav nav-tabs add-bottom-margin">
+    <li><%= link_to "Document", :back %>
+    <li class="active"><a href="/tagging">Tagging</a></li>
+  </ul>
+
+  <div class="tab-content">
+    <form class="edition-form js-edition-form" id="new_edition" enctype="multipart/form-data" action="/government/admin/detailed-guides" accept-charset="UTF-8" method="post">
+
+      <%= render 'partials/policies' %>
+
+      <%= render 'partials/topic_subtopic', locals: { topics: topics } %>
+
+      <%= render 'partials/controls', show_tagging_button: false %>
+
+    </form>
+  </div>
+</div>
 <% end %>
 
+<% content_for :sidebar %>
+<%= render 'partials/sidebar' %>
+<% end %>
 
-<%= render :template => 'layouts/govuk_admin_template' %>
+<%= render :template => 'layouts/two_column' %>

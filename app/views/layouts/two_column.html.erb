@@ -1,0 +1,12 @@
+<% content_for :content do %>
+
+<div class="row">
+  <section class="col-md-8">
+    <%= yield(:main_column) %>
+  </section>
+  <div class="col-md-4">
+    <%= yield(:sidebar) %>
+  </div>
+</div>
+
+<% end %>
