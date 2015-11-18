@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 
   get 'publication'    => 'whitehall#publication'
   get 'publication/tagging'    => 'whitehall#publication_tagging'
+  get 'publication/review'    => 'whitehall#publication_review'
 
   get 'news_article'   => 'whitehall#news_article'
 

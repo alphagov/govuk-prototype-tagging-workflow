@@ -1,0 +1,220 @@
+<%# blocks for govuk_admin_template %>
+<% content_for :page_title do %>GOV.UK admin prototype<% end %>
+
+<% content_for :main_column do %>
+<div class="page-header">
+  <h1>Test</h1>
+  <p class="lead">Test</p>
+
+  <dl class="clearfix dl-horizontal">
+    <dt>Type of document:</dt>
+    <dd>Publication: Guidance</dd>
+    <dt>Status:</dt>
+    <dd>Draft</dd>
+    <dt>Change type:</dt>
+    <dd>Major</dd>
+    <dt>Organisations:</dt>
+    <dd>Government Digital Service</dd>
+  </dl>
+</div>
+
+<section class="edition-view-edit-buttons">
+  <a class="btn btn-lg btn-primary preview_version" target="_blank" href="https://whitehall-admin.preview.alphagov.co.uk/government/publications/test--58?cachebust=1447771226&amp;preview=563413">Preview on website</a>
+
+  <a title="Edit Test" class="btn btn-default btn-lg add-left-margin" href="/government/admin/publications/563413/edit">Edit draft</a>
+</section>
+
+<section class="translations" id="translations">
+  <h2>
+    Translations
+    <a href="#add-translation-modal" id="open-add-translation-modal" class="btn btn-default pull-right" data-toggle="modal"><i class="glyphicon glyphicon-plus-sign"></i>Add translation</a>
+  </h2>
+  <div id="add-translation-modal" class="modal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+          <h3 class="modal-title">Add translation</h3>
+        </div>
+        <form action="/government/admin/editions/563413/translations" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="ipnt7/6yrrcE7cHF2Cq02fhC0RVMZz35OQbF9hjDBPhM+mS2O/KsrwxRHWDpIPIz9I1Ch3NivIPmwG9JOefqwQ==">
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="translation_locale">Locale</label>
+              <select name="translation_locale" id="translation_locale" class="form-control input-md-4"><option value="ar">العربية (Arabic)</option>
+                <option value="az">Azərbaycanca (Azeri)</option>
+                <option value="be">Беларуская (Belarusian)</option>
+                <option value="bg">български (Bulgarian)</option>
+                <option value="bn">বাংলা (Bangla)</option>
+                <option value="cs">Česky (Czech)</option>
+                <option value="cy">Cymraeg (Welsh)</option>
+                <option value="de">Deutsch (German)</option>
+                <option value="dr">دری (Dari)</option>
+                <option value="el">Ελληνικά  (Greek)</option>
+                <option value="es">Español (Spanish)</option>
+                <option value="es-419">Español (Latin American Spanish)</option>
+                <option value="et">Eesti (Estonian)</option>
+                <option value="fa">فارسی (Persian)</option>
+                <option value="fr">Français (French)</option>
+                <option value="he">עברית (Hebrew)</option>
+                <option value="hi">हिंदी (Hindi)</option>
+                <option value="hu">Magyar (Hungarian)</option>
+                <option value="hy">Հայերեն (Armenian)</option>
+                <option value="id">Bahasa Indonesia (Indonesian)</option>
+                <option value="it">Italiano (Italian)</option>
+                <option value="ja">日本語 (Japanese)</option>
+                <option value="ka">ქართული (Georgian)</option>
+                <option value="ko">한국어 (Korean)</option>
+                <option value="lt">Lietuvių (Lithuanian)</option>
+                <option value="lv">Latviešu (Latvian)</option>
+                <option value="ms">Bahasa Melayu (Malay)</option>
+                <option value="pl">Polski (Polish)</option>
+                <option value="ps">پښتو (Pashto)</option>
+                <option value="pt">Português (Portuguese)</option>
+                <option value="ro">Română (Romanian)</option>
+                <option value="ru">Русский (Russian)</option>
+                <option value="si">සිංහල (Sinhala)</option>
+                <option value="sk">Slovenčina (Slovakian)</option>
+                <option value="so">Soomaaliga (Somali)</option>
+                <option value="sq">Shqip (Albanian)</option>
+                <option value="sr">Srpski (Serbian)</option>
+                <option value="sw">Kiswahili (Swahili)</option>
+                <option value="ta">தமிழ் (Tamil)</option>
+                <option value="th">ไทย (Thai)</option>
+                <option value="tk">Türkmençe (Turkmen)</option>
+                <option value="tr">Türkçe (Turkish)</option>
+                <option value="uk">Українська (Ukrainian)</option>
+                <option value="ur">اردو (Urdu)</option>
+                <option value="uz">O'zbekcha (Uzbeki)</option>
+                <option value="vi">Tiếng Việt (Vietnamese)</option>
+                <option value="zh">中文 (Chinese)</option>
+                <option value="zh-hk">中文 (Cantonese)</option>
+                <option value="zh-tw">中文 (Traditional Chinese)</option>
+              </select>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-default add-right-margin" data-dismiss="modal" aria-hidden="true">Cancel</button>
+            <input type="submit" name="commit" value="Add translation" class="btn btn-success">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <p class="no-content no-content-bordered">
+    No translations
+  </p>
+</section>
+
+<section>
+  <h2>
+    Attachments
+    <span class="pull-right"><a title="Modify attachments of Test" class="btn btn-default" href="/government/admin/editions/563413/attachments"><i class="glyphicon glyphicon-edit"></i> Modify attachments</a></span>
+  </h2>
+  <p class="no-content no-content-bordered">
+    No attachments
+  </p>
+</section>
+<% end %>
+
+<% content_for :sidebar do %>
+<section>
+  <form class="button_to" method="post" action="/government/admin/editions/563413/submit?lock_version=0">
+    <input class="btn btn-success second-eyes" type="submit" value="Submit for 2nd eyes">
+  </form>
+
+  <div id="forcePublishModal" class="modal" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+          <h3 class="modal-title">Why are you force publishing this?</h3>
+        </div>
+        <form class="force-publish-form" action="/government/admin/editions/563413/force_publish?lock_version=0" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="ipnt7/6yrrcE7cHF2Cq02fhC0RVMZz35OQbF9hjDBPhM+mS2O/KsrwxRHWDpIPIz9I1Ch3NivIPmwG9JOefqwQ==">
+          <div class="modal-body">
+            <p class="alert alert-warning">You should only force publish documents when no other editor is available to review and publish your work, for example out of hours or in an emergency.</p>
+
+            <div class="form-group">
+              <label for="reason">Reason for force publishing</label>
+              <input type="text" name="reason" id="reason" class="form-control">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <input type="submit" name="commit" value="Force publish" class="btn btn-warning">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <a title="Publish Test" class="btn btn-default force-publish" data-module="linked-modal" data-target="#forcePublishModal" href="/government/admin/editions/563413/confirm_force_publish?lock_version=0">Force publish</a>
+
+
+  <form class="button_to" method="post" action="/government/admin/publications/563413">
+    <input type="hidden" name="_method" value="delete">
+    <input title="Delete" data-confirm="Are you sure you want to discard this draft?" class="btn btn-danger" type="submit" value="Discard draft">
+    <input type="hidden" name="authenticity_token" value="ipnt7/6yrrcE7cHF2Cq02fhC0RVMZz35OQbF9hjDBPhM+mS2O/KsrwxRHWDpIPIz9I1Ch3NivIPmwG9JOefqwQ==">
+  </form>
+</section>
+
+<div class="broken-links-report">
+  <section class="alert alert-info">
+    <p>Check this document for broken links. The report will take a few moments to complete.</p>
+
+    <form class="new_links_report" id="new_links_report" action="/government/admin/editions/563413/links_reports" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="✓">
+      <input type="submit" name="commit" value="Check for broken links" class="btn btn-default add-top-margin remove-bottom-margin">
+    </form>
+  </section>
+</div>
+
+
+<div class="sidebar tabbable remarks-history">
+  <ul class="nav nav-tabs add-bottom-margin">
+    <li class="active"><a href="#notes" data-toggle="tab">Notes <span class="badge">0</span></a></li>
+    <li><a href="#history" data-toggle="tab">History <span class="badge">1</span></a></li>
+    <li><a href="#fact_checking" data-toggle="tab">Fact checking <span class="badge">0</span></a></li>
+  </ul>
+
+  <div class="tab-content">
+    <section class="tab-pane active audit-trail" id="notes">
+      <h1>Notes</h1>
+      <a class="btn btn-default add-remark" href="/government/admin/editions/563413/editorial_remarks/new">Add new remark</a>
+    </section>
+    <section class="tab-pane audit-trail" id="history">
+      <div class="audit-trail-page">
+        <h1>Activity</h1>
+
+        <ul class="list-unstyled">
+          <li class="version" id="version_2371158">
+
+            <div class="image">
+              <img alt="Alex Torrance" src="https://secure.gravatar.com/avatar/add96be88279689568f68b8f5e8f9b93?d=mm&amp;s=40">
+            </div>
+            <span class="action">Created</span> by <span class="actor"><a href="/government/admin/authors/408">Alex Torrance</a></span> <time class="created_at datetime" datetime="2015-11-17T14:40:26+00:00">17 November 2015  2:40pm</time>
+          </li>
+        </ul>
+
+      </div>
+    </section>
+    <section class="tab-pane fact_checking" id="fact_checking">
+      <h1>Fact checking</h1>
+      <section class="responses">
+        <p>Document doesn't have any fact checking responses yet.</p>
+      </section>
+      <section class="pending">
+      </section>
+
+      <section class="request">
+        <h1>Send request</h1>
+        <form class="new_fact_check_request" id="new_fact_check_request" action="/government/admin/editions/563413/fact_check_requests" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="ipnt7/6yrrcE7cHF2Cq02fhC0RVMZz35OQbF9hjDBPhM+mS2O/KsrwxRHWDpIPIz9I1Ch3NivIPmwG9JOefqwQ==">
+          <div class="form-group"><label class="required" for="fact_check_request_email_address">Email address<span>*</span></label><input class="form-control" type="text" name="fact_check_request[email_address]" id="fact_check_request_email_address"></div>
+          <div class="form-group"><label for="fact_check_request_instructions">Extra instructions</label><textarea class="form-control" name="fact_check_request[instructions]" id="fact_check_request_instructions"></textarea></div>
+          <input type="submit" name="commit" value="Send request" class="btn btn-default">
+        </form>
+      </section>
+    </section>
+  </div>
+</div>
+<% end %>
+
+<%= render :template => 'layouts/two_column' %>
