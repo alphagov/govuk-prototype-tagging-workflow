@@ -1,5 +1,6 @@
 <%# blocks for govuk_admin_template %>
 <% content_for :page_title do %>GOV.UK admin prototype<% end %>
+<% content_for :page_class do %>edition-show<% end %>
 
 <% content_for :main_column do %>
 <div class="page-header">
@@ -27,7 +28,7 @@
 <section class="translations" id="translations">
   <h2>
     Translations
-    <a href="#add-translation-modal" id="open-add-translation-modal" class="btn btn-default pull-right" data-toggle="modal"><i class="glyphicon glyphicon-plus-sign"></i>Add translation</a>
+    <a href="#add-translation-modal" id="open-add-translation-modal" class="btn btn-default pull-right" data-toggle="modal"><i class="glyphicon glyphicon-plus-sign"></i> Add translation</a>
   </h2>
   <div id="add-translation-modal" class="modal">
     <div class="modal-dialog">
@@ -117,6 +118,7 @@
 </section>
 <% end %>
 
+<% content_for :sidebar_class do %>edition-sidebar<% end %>
 <% content_for :sidebar do %>
 <section>
   <form class="button_to" method="post" action="/government/admin/editions/563413/submit?lock_version=0">
