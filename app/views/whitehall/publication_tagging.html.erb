@@ -9,19 +9,26 @@
 </div>
 
 <div class="tabbable">
-  <ul class="nav nav-tabs add-bottom-margin">
-    <li><%= link_to "Document", :back %>
-    <li class="active"><a href="/tagging">Tagging</a></li>
-  </ul>
-
   <div class="tab-content">
     <form class="edition-form js-edition-form" id="new_edition" enctype="multipart/form-data" action="/government/admin/detailed-guides" accept-charset="UTF-8" method="post">
+
+      <%= render partial: 'partials/organisations', locals: { organisations: organisations } %>
+
+      <%= render partial: 'partials/ministers', locals: { ministers: ministers } %>
 
       <%= render 'partials/policies' %>
 
       <%= render 'partials/topic_subtopic', locals: { topics: topics } %>
 
-      <%= render 'partials/controls', show_tagging_button: false %>
+      <div class="publishing-controls well">
+        <div class="form-actions">
+          <a href="/publication/review" class="btn btn-primary btn-lg">Save</a>
+          <a href="#" class="btn btn-primary btn-lg">Save and continue</a>
+
+          <span class="or_cancel"> or <a href="#">cancel</a></span>
+        </div>
+      </div>
+
 
     </form>
   </div>

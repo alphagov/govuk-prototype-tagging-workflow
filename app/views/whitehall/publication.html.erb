@@ -9,10 +9,6 @@
 </div>
 
 <div class="tabbable">
-  <ul class="nav nav-tabs add-bottom-margin">
-    <li class="active"><a href="/">Document</a></li>
-  </ul>
-
   <div class="tab-content">
     <form class="edition-form js-edition-form" id="new_edition" enctype="multipart/form-data" action="/government/admin/detailed-guides" accept-charset="UTF-8" method="post">
 
@@ -33,13 +29,6 @@
       <fieldset>
         <legend>Associations</legend>
 
-        <%= render partial: 'partials/organisations', locals: { organisations: organisations } %>
-
-        <%= render partial: 'partials/ministers', locals: { ministers: ministers } %>
-
-        <%= render 'partials/related_guides' %>
-
-        <%= render 'partials/related_mainstream' %>
 
         <%= render 'partials/statistical_data_set' %>
 
