@@ -1,8 +1,11 @@
 <fieldset>
   <legend class="visuallyhidden">Polices and policy areas</legend>
   <label for="edition_policy_content_ids">Policies</label>
+
+  <p class="help-block" id="policy-description">Tag to policies if your document is about how the government is developing a policy. Documents that should be tagged to policies include guidance, etc, etc</p>
+
   <input name="edition[policy_content_ids][]" type="hidden" value="" />
-  <select multiple="multiple" class="chzn-select form-control" data-placeholder="Choose policies…" name="edition[policy_content_ids][]" id="edition_policy_content_ids">
+  <select multiple="multiple" class="chzn-select form-control" data-placeholder="Choose policies…" name="edition[policy_content_ids][]" id="edition_policy_content_ids" aria-describedby="policy-description">
     <option value=""></option>
 
     <% policies.each do |pol| %>
@@ -10,9 +13,12 @@
     <% end %>
   </select>
 
-  <label class="required" for="edition_topic_ids">Policy Areas (this is the new name for Topics)<span>*</span></label>
+  <label class="required" for="edition_topic_ids">Policy Areas<span>*</span></label>
+
+  <p class="help-block" id="policy-area-description">Users are subscribed to email alerts for policy areas and will recieve notifications when content is added. They are no longer used for navigation.</p>
+
   <input name="edition[topic_ids][]" type="hidden" value="" />
-  <select multiple="multiple" class="chzn-select form-control" data-placeholder="Choose topics…" name="edition[topic_ids][]" id="edition_topic_ids">
+  <select multiple="multiple" class="chzn-select form-control" data-placeholder="Choose policy areas…" name="edition[topic_ids][]" id="edition_topic_ids" aria-describedby="policy-area-description">
     <option value=""></option>
 
     <% policy_areas.each do |pol| %>
