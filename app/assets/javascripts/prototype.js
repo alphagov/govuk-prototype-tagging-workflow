@@ -37,4 +37,21 @@ $(document).ready(function() {
       $('#'+p.selected+'-item').toggleClass('active');
     }
   });
+
+
+  $('#policy-area-ids').chosen().change(function(e, p) {
+    if (p.selected != null) {
+      var numSubs = Math.floor(Math.random() * (200 - 1000) + 1000);
+
+      var $policySubscribers = $('#policy-area-subscribers');
+
+      if ($policySubscribers.length == 0) {
+        $('<div class="notice bg-danger"><span id="policy-area-subscribers">0</span> users will be emailed about this document.</div>')
+          .insertAfter('#policy_area_ids_chosen');
+        $policySubscribers = $('#policy-area-subscribers');
+      }
+
+      $policySubscribers.text(numSubs + Number($policySubscribers.text()));
+    }
+  });
 });

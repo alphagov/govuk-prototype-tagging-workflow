@@ -13,12 +13,12 @@
     <% end %>
   </select>
 
-  <label class="required" for="edition_topic_ids">Policy Areas<span>*</span></label>
+  <label class="required" for="policy-area-ids">Policy Areas<span>*</span></label>
 
   <p class="help-block" id="policy-area-description">Users are subscribed to email alerts for policy areas and will recieve notifications when content is added. They are no longer used for navigation.</p>
 
   <input name="edition[topic_ids][]" type="hidden" value="" />
-  <select multiple="multiple" class="chzn-select form-control" data-placeholder="Choose policy areas…" name="edition[topic_ids][]" id="edition_topic_ids" aria-describedby="policy-area-description">
+  <select multiple="multiple" class="chzn-select form-control" data-placeholder="Choose policy areas…" name="edition[topic_ids][]" id="policy-area-ids" aria-describedby="policy-area-description">
     <option value=""></option>
 
     <% policy_areas.each do |pol| %>
