@@ -60,3 +60,13 @@ form {
 .chosen-disabled {
   opacity: 1 !important;
 }
+
+.notice {
+  padding: 1em;
+  margin-bottom: 1em;
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
