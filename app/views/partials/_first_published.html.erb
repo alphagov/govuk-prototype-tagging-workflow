@@ -18,20 +18,30 @@
       <p for="edition_first_published_at">Its original publication date was</p>
 
       <div class="form-inline form-date">
-        <label for="publication-day" class="visuallyhidden">Day</label>
-        <input type="text" name="publication-day" id="publication-day" class="form-day form-control">
+        <div class="form-group form-group-day">
+          <label for="publication-day">Day</label>
+          <input type="text" name="publication-day" id="publication-day" class="form-control">
+        </div>
 
-        <label for="publication-month" class="visuallyhidden">Month</label>
-        <input type="text" name="publication-month" id="publication-month" class="form-month form-control">
+        <div class="form-group form-group-month">
+          <label for="publication-month">Month</label>
+          <input type="text" name="publication-month" id="publication-month" class="form-control">
+        </div>
 
-        <label for="publication-year" class="visuallyhidden">Year</label>
-        <input type="text" name="publication-year" id="publication-year" class="form-year form-control">
-        —
-        <label for="publication-hour" class="visuallyhidden">Hour</label>
-        <input type="text" name="publication-hour" id="publication-hour" class="form-hour form-control">
-        :
-        <label for="publication-minute" class="visuallyhidden">Minute</label>
-        <input type="text" name="publication-minute" id="publication-minute" class="form-minute form-control">
+        <div class="form-group form-group-year form-group-spacer">
+          <label for="publication-year">Year</label>
+          <input type="text" name="publication-year" id="publication-year" class="form-control">
+        </div>
+
+        <div class="form-group form-group-hour">
+          <label for="publication-hour">Hour</label>
+          <input type="text" name="publication-hour" id="publication-hour" class="form-control">
+        </div>
+
+        <div class="form-group form-group-minute">
+          <label for="publication-minute">Minute</label>
+          <input type="text" name="publication-minute" id="publication-minute" class="form-control">
+        </div>
       </div>
     </fieldset>
   </div>

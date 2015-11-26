@@ -1,22 +1,29 @@
 .form-date {
-  .form-day {
+
+  .form-group {
+    float: left;
     width: 50px;
+
+    margin-right: 10px;
+    margin-bottom: 0;
+    clear: none;
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input {
+      width: 100%;
+    }
   }
 
-  .form-month {
-    width: 50px;
-  }
-
-  .form-year {
+  .form-group-year {
     width: 70px;
   }
 
-  .form-hour {
-    width: 50px;
-  }
-
-  .form-minute {
-    width: 50px;
+  .form-group-spacer {
+    margin-right: 20px;
   }
 }
 

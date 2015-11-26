@@ -10,20 +10,30 @@
 
   <div class="scheduled_publication js-hidden" id="scheduled-publication-date">
     <div class="form-inline form-date">
-      <label for="scheduled-publication-day" class="visuallyhidden">Day</label>
-      <input type="text" name="scheduled-publication-day" id="scheduled-publication-day" class="form-day form-control">
+      <div class="form-group form-group-day">
+        <label for="scheduled-publication-day">Day</label>
+        <input type="text" name="scheduled-publication-day" id="scheduled-publication-day" class="form-control" value="<%= Date.current.day %>">
+      </div>
 
-      <label for="scheduled-publication-month" class="visuallyhidden">Month</label>
-      <input type="text" name="scheduled-publication-month" id="scheduled-publication-month" class="form-month form-control">
+      <div class="form-group form-group-month">
+        <label for="scheduled-publication-month">Month</label>
+        <input type="text" name="scheduled-publication-month" id="scheduled-publication-month" class="form-control" value="<%= Date.current.month %>">
+      </div>
 
-      <label for="scheduled-publication-year" class="visuallyhidden">Year</label>
-      <input type="text" name="scheduled-publication-year" id="scheduled-publication-year" class="form-year form-control">
-      —
-      <label for="scheduled-publication-hour" class="visuallyhidden">Hour</label>
-      <input type="text" name="scheduled-publication-hour" id="scheduled-publication-hour" class="form-hour form-control">
-      :
-      <label for="scheduled-publication-minute" class="visuallyhidden">Minute</label>
-      <input type="text" name="scheduled-publication-minute" id="scheduled-publication-minute" class="form-minute form-control">
+      <div class="form-group form-group-year form-group-spacer">
+        <label for="scheduled-publication-year">Year</label>
+        <input type="text" name="scheduled-publication-year" id="scheduled-publication-year" class="form-control" value="<%= Date.current.year %>">
+      </div>
+
+      <div class="form-group form-group-hour">
+        <label for="scheduled-publication-hour">Hour</label>
+        <input type="text" name="scheduled-publication-hour" id="scheduled-publication-hour" class="form-control" value="<%= Time.now.hour %>">
+      </div>
+
+      <div class="form-group form-group-minute">
+        <label for="scheduled-publication-minute">Minute</label>
+        <input type="text" name="scheduled-publication-minute" id="scheduled-publication-minute" class="form-control" value="<%= Time.now.min %>">
+      </div>
     </div>
   </div>
 </fieldset>
