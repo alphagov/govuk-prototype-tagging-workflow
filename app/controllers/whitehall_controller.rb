@@ -1,6 +1,10 @@
 class WhitehallController < ApplicationController
   before_action :process_parameters, except: [:tagging]
 
+  def index
+    render layout: "blank"
+  end
+
   def detailed_guide
   end
 

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!--[if lt IE 9]><html class="lte-ie8" lang="" class="unbranded"><![endif]-->
+<!--[if gt IE 8]><!--><html lang="" class="unbranded"><!--<![endif]-->
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+
+    <title><% if content_for?(:page_title) %><%= yield(:page_title) %><% else %>GOV.UK - The best place to find government services and information<% end %></title>
+
+    <script type="text/javascript">
+      (function(){if(navigator.userAgent.match(/IEMobile\/10\.0/)){var d=document,c="appendChild",a=d.createElement("style");a[c](d.createTextNode("@-ms-viewport{width:auto!important}"));d.getElementsByTagName("head")[0][c](a);}})();
+    </script>
+
+    <%= stylesheet_link_tag "application.css" %>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <% if content_for?(:head) %><%= yield(:head) %><% end %>
+  </head>
+
+  <body>
+    <script type="text/javascript">document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+
+    <header role="banner" id="global-header" class="{{$headerClass}}{{/headerClass}}">
+    </header>
+    <!--end header-->
+
+    <% if content_for?(:after_header) %><%= yield(:after_header) %><% end %>
+
+    <%= yield %>
+
+    <footer class="group js-footer" id="footer" role="contentinfo">
+    </footer>
+
+    <!--end footer-->
+
+    <!-- <div id="global-app-error" class="app-error hidden"></div> -->
+
+    <% if content_for?(:body_end) %><%= yield(:body_end) %><% end %>
+  </body>
+</html>

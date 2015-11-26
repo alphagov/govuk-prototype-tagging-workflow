@@ -1,0 +1,18 @@
+// If you need to create a page as part of your journey, but without GOV.UK branding
+// See localhost:3000/examples/unbranded/
+.unbranded {
+  background: $white;
+  // Use the universal selector and !important to *ALWAYS OVERRIDE* GDS Transport
+  * {
+    font-family: Arial !important;
+  }
+  // Remove GOV.UK footer styles
+  #footer {
+    border: 0;
+    background: $white;
+  }
+  body {
+    margin: 1em 2em;
+    font-size: 19px;
+  }
+}
