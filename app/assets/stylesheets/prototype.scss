@@ -62,6 +62,15 @@ form {
       }
     }
   }
+
+  details {
+    summary {
+      font-size: 21px;
+      padding-top: 0;
+      border-top: none;
+      text-decoration: underline;
+    }
+  }
 }
 
 .chosen-disabled {
