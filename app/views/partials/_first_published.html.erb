@@ -1,19 +1,10 @@
-<fieldset class="first-published-date well show-hide">
-  <p class="required">This document <span>*</span></p>
-  <div class="radio">
-    <label class="radio" for="edition_previously_published_false">
-      <input type="radio" value="false" name="edition[previously_published]" id="edition_previously_published_false" />
-      has never been published before. It's new.
-    </label>
-  </div>
-  <div class="radio">
-    <label class="radio" for="edition_previously_published_true" data-target="js-show-first-published">
-      <input type="radio" value="true" name="edition[previously_published]" id="edition_previously_published_true" />
-      has previously been published on another website.
-    </label>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <label for="edition_previously_published" data-target="js-show-first-published" class="show-hide"><input type="checkbox" name="edition_previously_published" value="true"> This document has been previously published on another website</label>
   </div>
 
-  <div class="js-show-first-published show-first-published js-hidden" id="js-show-first-published">
+  <div class="js-show-first-published show-first-published js-hidden panel-body" id="js-show-first-published">
     <fieldset>
       <p for="edition_first_published_at">Its original publication date was</p>
 
@@ -45,4 +36,4 @@
       </div>
     </fieldset>
   </div>
-</fieldset>
+</div>
