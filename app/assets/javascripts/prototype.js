@@ -16,15 +16,39 @@ $(document).ready(function() {
   $('.tag-explorer-topics-level-2 a').on('click', function(e) {
     e.preventDefault();
 
-    var $this = $(this), $chosen = $('#chosen-subtopics');
+    var $this = $(this);
+    var $chosen = $('#chosen-subtopics');
     var val = $this.attr('href');
-
     var $opt = $chosen.find('option[value='+val+']');
 
     if ($opt.attr('selected') == 'selected') {
       $opt.attr('selected', false).trigger('chosen:updated');
+
+      var topicSlug = $this.attr('id');
+      $('#topic-curated-warning-'+topicSlug).remove();
+
+      var $topicCuratedWarning = $('#topic-curated-warning');
+      if ($topicCuratedWarning.siblings().length == 0) {
+        $topicCuratedWarning.parent().remove();
+      }
     } else {
       $opt.attr('selected', true).trigger('chosen:updated');;
+
+      // random 1 in 5
+      if (Math.random() <= 0.2) {
+        var $topicCuratedWarning = $('#topic-curated-warning');
+
+        if ($topicCuratedWarning.length == 0) {
+          $('<div class="notice bg-info"><p id="topic-curated-warning">Read the guidance on how to <a href="#">get content added to curated topics</a>.</p></div>')
+            .insertBefore('#tag-explorer');
+          $topicCuratedWarning = $('#topic-curated-warning');
+        }
+
+        var topicName = $this.text();
+        var topicSlug = $this.attr('id');
+
+        $topicCuratedWarning.before('<p id="topic-curated-warning-'+topicSlug+'">'+topicName+' is a curated topic.</p>');
+      }
     }
 
     $this.toggleClass('active');
