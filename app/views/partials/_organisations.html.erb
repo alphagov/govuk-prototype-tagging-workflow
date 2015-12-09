@@ -3,6 +3,7 @@
 <select multiple="multiple" name="edition[lead_organisation_ids][]" id="edition_lead_organisation_ids_1" class="chzn-select form-control" data-placeholder="Choose organisations…">
   <option value=""></option>
   <% organisations.each do |org| %>
-  <option value="<%= org['slug'] %>"><%= org['title'] %></option>
+  <% acronym = org['organisations'][0]['acronym'] %>
+  <option value="<%= org['slug'] %>"><%= org['title'] %><% if !acronym.nil? %> (<%= acronym %>)<% end %></option>
   <% end %>
 </select>
