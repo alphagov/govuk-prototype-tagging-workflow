@@ -34,8 +34,8 @@ $(document).ready(function() {
     } else {
       $opt.attr('selected', true).trigger('chosen:updated');;
 
-      // random 1 in 5
-      if (Math.random() <= 0.2) {
+      // random 1 in 2
+      if (Math.random() <= (1/2)) {
         var $topicCuratedWarning = $('#topic-curated-warning');
 
         if ($topicCuratedWarning.length == 0) {
