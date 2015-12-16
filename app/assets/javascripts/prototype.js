@@ -78,4 +78,17 @@ $(document).ready(function() {
       $policySubscribers.text(numSubs + Number($policySubscribers.text()));
     }
   });
+
+  $('.suggested-topics-list').find('a').on('click', function(e) {
+    e.preventDefault();
+
+    var id = $(this).attr('href');
+    $(id).click();
+  });
+
+  $('#suggested-topics-select').on('click', function(e) {
+    e.preventDefault();
+
+    $('.suggested-topics-list').find('a').click();
+  });
 });
