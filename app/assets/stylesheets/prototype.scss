@@ -41,10 +41,22 @@
   @extend %contain-floats;
 
   .tag-container {
-    width: 50%;
-    float: left;
+    // width: 50%;
+    // float: left;
     max-height: 20em;
     overflow: scroll;
+
+    .checkbox {
+      margin-top: 0;
+    }
+
+    .return-arrow {
+      display: none;
+    }
+
+    .active .return-arrow {
+      display: inline;
+    }
   }
 }
 
@@ -85,7 +97,6 @@ form {
     margin-bottom: 0;
   }
 }
-
 
 .comma-separated-list {
   list-style: none;
