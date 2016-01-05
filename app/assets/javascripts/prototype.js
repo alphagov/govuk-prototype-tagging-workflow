@@ -28,13 +28,16 @@ $(document).ready(function() {
     var $this = $(this);
     var $div = $this.parents('.list-group-item');
     var $target = $('#selected-topics').find('.tag-container');
-    var $topic = $('.tag-explorer-topics-level-1 a:visible');
+    var $selected = $('#'+val+'_selected-item');
     var val = $this.val();
 
-    if ($this.is(':checked') && $('#'+val+'-selected-item').length == 0) {
-      var $selected = $div.clone();
+    var pos = val.lastIndexOf('_');
+    var $topic = $('#'+val.substring(0, pos)+'_parent');
 
-      $selected.attr('id', val+'-selected-item');
+    if ($this.is(':checked') && $selected.length == 0) {
+      $selected = $div.clone();
+
+      $selected.attr('id', val+'_selected-item');
       $selected.appendTo($target);
       $topic.addClass('list-group-item-info');
 
