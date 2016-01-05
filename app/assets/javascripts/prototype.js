@@ -41,7 +41,7 @@ $(document).ready(function() {
       $selected.appendTo($target);
       $topic.addClass('list-group-item-info');
 
-      // random 1 in 2
+      // Curated topic warning
       if (Math.random() <= (1/2)) {
         var $topicCuratedWarning = $('#topic-curated-warning');
 
@@ -55,6 +55,23 @@ $(document).ready(function() {
 
         var topicName = $.trim($div.text());
         $topicCuratedWarning.before('<p id="topic-curated-warning-'+val+'">'+topicName+' is a curated topic.</p>');
+      }
+
+      // email subscribers warning
+      if (Math.random() <= (1/5)) {
+        var numSubs = Math.floor(Math.random() * (200 - 1000) + 1000);
+
+        var $topicSubscribers = $('#topic-area-subscribers');
+
+        if ($topicSubscribers.length == 0) {
+          var $warningTarget = $('#tag-explorer').parents('.row').first();
+
+          $('<div class="notice bg-danger"><span id="topic-area-subscribers">0</span> users will be emailed about this document.</div>')
+            .insertAfter($warningTarget);
+          $topicSubscribers = $('#topic-area-subscribers');
+        }
+
+        $topicSubscribers.text(numSubs + Number($topicSubscribers.text()));
       }
     } else {
       $('#'+val+'-selected-item').remove();
