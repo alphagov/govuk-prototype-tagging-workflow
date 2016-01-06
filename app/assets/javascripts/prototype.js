@@ -28,8 +28,8 @@ $(document).ready(function() {
     var $this = $(this);
     var $div = $this.parents('.list-group-item');
     var $target = $('#selected-topics').find('.tag-container');
-    var $selected = $('#'+val+'_selected-item');
     var val = $this.val();
+    var $selected = $('#'+val+'_selected-item');
 
     var pos = val.lastIndexOf('_');
     var $topic = $('#'+val.substring(0, pos)+'_parent');
@@ -73,7 +73,7 @@ $(document).ready(function() {
 
         $topicSubscribers.text(numSubs + Number($topicSubscribers.text()));
       }
-    } else {
+    } else if (!$this.is(':checked')) {
       $('#'+val+'_selected-item').remove();
 
       if ($div.siblings().find('input:checked').length == 0) {
@@ -100,15 +100,6 @@ $(document).ready(function() {
     }
   });
 
-  $('#chosen-subtopics').chosen().change(function(e, p) {
-    if (p.deselected != null) {
-      $('#'+p.deselected+'-item').toggleClass('active');
-    } else if (p.selected != null) {
-      $('#'+p.selected+'-item').toggleClass('active');
-    }
-  });
-
-
   $('#policy-area-ids').chosen().change(function(e, p) {
     if (p.selected != null) {
       var numSubs = Math.floor(Math.random() * (200 - 1000) + 1000);
@@ -129,7 +120,7 @@ $(document).ready(function() {
     e.preventDefault();
 
     var id = $(this).attr('href');
-    $(id).click();
+    $(id).find('input').prop('checked', true).trigger('change');
   });
 
   $('#suggested-topics-select').on('click', function(e) {
