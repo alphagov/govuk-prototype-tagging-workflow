@@ -74,7 +74,7 @@ $(document).ready(function() {
         $topicSubscribers.text(numSubs + Number($topicSubscribers.text()));
       }
     } else {
-      $('#'+val+'-selected-item').remove();
+      $('#'+val+'_selected-item').remove();
 
       if ($div.siblings().find('input:checked').length == 0) {
         $topic.removeClass('list-group-item-info');
