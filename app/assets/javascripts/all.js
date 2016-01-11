@@ -8,6 +8,7 @@
 //= require vendor/jquery/jquery-ui-1.10.2.custom
 //= require vendor/jquery/jquery.player.min
 //= require vendor/google-diff-match-patch.js
+//= require vendor/typeahead.js/typeahead.bundle.js
 //
 //= require shared_mustache
 //= require templates

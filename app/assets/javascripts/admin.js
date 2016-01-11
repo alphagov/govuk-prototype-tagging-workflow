@@ -5,6 +5,7 @@
 //= require vendor/jquery/jquery-debounce.js
 //= require vendor/jquery/magna-charta.min
 //= require vendor/google-diff-match-patch.js
+//= require vendor/typeahead.js/typeahead.bundle.js
 //= require ./application/convert-html-pub-charts
 //= require govuk
 //= require_tree ./common
