@@ -48,7 +48,7 @@ $(document).ready(function() {
         if ($topicCuratedWarning.length == 0) {
           var $warningTarget = $('#tag-explorer').parents('.row').first();
 
-          $('<div class="notice bg-info"><p id="topic-curated-warning">Read the guidance on how to <a href="#">get content added to curated topics</a>.</p></div>')
+          $('<div class="notice bg-info"><p id="topic-curated-warning">Read the guidance on how to <a href="https://www.gov.uk/guidance/how-to-publish-on-gov-uk/creating-and-updating-pages#a-to-z-topic-pages-and-two-column-topic-pages">get content added to curated topics</a>.</p></div>')
             .insertAfter($warningTarget);
           $topicCuratedWarning = $('#topic-curated-warning');
         }
