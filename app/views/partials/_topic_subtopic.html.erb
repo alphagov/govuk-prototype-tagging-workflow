@@ -26,7 +26,7 @@
 
         <div class="tag-container list-group tag-explorer-topics-level-1">
           <% topics.each do |topic| %>
-          <a href="#<%= topic['base_path'].gsub(/\//, "_") %>" class="list-group-item" id="<%= topic['base_path'].gsub(/\//, "_") %>_parent"><span class="return-arrow">↩ </span><%= topic['title'] %></a>
+          <a href="#<%= topic['base_path'].gsub(/\//, "_") %>" class="list-group-item" id="<%= topic['base_path'].gsub(/\//, "_") %>_parent"><span class="return-arrow glyphicon glyphicon-chevron-left" aria-hidden="true"></span><%= topic['title'] %><span class="forward-arrow glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
           <% end %>
 
           <% topics.each do |topic| %>

@@ -52,10 +52,24 @@
 
     .return-arrow {
       display: none;
+      margin-right: 5px;
     }
 
-    .active .return-arrow {
-      display: inline;
+    .forward-arrow {
+      color: #737373;
+      position: absolute;
+      right: 10px;
+      line-height: 2.5em;
+    }
+
+    .active {
+      .return-arrow {
+        display: inline;
+      }
+
+      .forward-arrow {
+        display: none;
+      }
     }
   }
 }
