@@ -30,6 +30,7 @@ $(document).ready(function() {
     var $target = $('#selected-topics').find('.tag-container');
     var val = $this.val();
     var $selected = $('#'+val+'_selected-item');
+    var $suggested = $('#'+val+'-suggested');
 
     var pos = val.lastIndexOf('_');
     var $topic = $('#'+val.substring(0, pos)+'_parent');
@@ -87,17 +88,22 @@ $(document).ready(function() {
         $topicCuratedWarning.parent().remove();
       }
     }
+
+    $suggested.prop('checked', $this.prop('checked'));
   });
 
   $('#selected-topics').on('change', 'input', function(e) {
     var $this = $(this);
     var $div = $this.parents('.list-group-item');
     var $master = $('#'+$this.val()+'-item');
+    var $suggested = $('#'+$this.val()+'-suggested');
 
     if ($this.is(':checked') == false) {
       $div.remove();
       $master.find('input').click();
     }
+
+    $suggested.prop('checked', $this.prop('checked'));
   });
 
   $('#policy-area-ids').chosen().change(function(e, p) {
@@ -116,16 +122,16 @@ $(document).ready(function() {
     }
   });
 
-  $('.suggested-topics-list').find('a').on('click', function(e) {
-    e.preventDefault();
+  $('.suggested-topics-list').on('change', 'input', function(e) {
+    var $this = $(this);
+    var id = $this.val();
 
-    var id = $(this).attr('href');
-    $(id).find('input').prop('checked', true).trigger('change');
+    $(id).find('input').prop('checked', $this.prop('checked')).trigger('change');
   });
 
   $('#suggested-topics-select').on('click', function(e) {
     e.preventDefault();
 
-    $('.suggested-topics-list').find('a').click();
+    $('.suggested-topics-list').find('input').prop('checked', true).trigger('change');
   });
 });
