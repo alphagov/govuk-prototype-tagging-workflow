@@ -87,8 +87,16 @@ $(document).ready(function() {
         $('.preview-topics-list').append($(previewLink));
       }
 
+      $('#no-topics').hide();
+
     } else if (!$this.is(':checked')) {
-      $('#'+val+'_selected-item').remove();
+      var $selected = $('#'+val+'_selected-item');
+
+      if ($selected.siblings().length == 0) {
+        $('#no-topics').show();
+      }
+
+      $selected.remove();
 
       if ($div.siblings().find('input:checked').length == 0) {
         $topic.removeClass('list-group-item-info');
@@ -112,7 +120,6 @@ $(document).ready(function() {
     var $suggested = $('#'+$this.val()+'-suggested');
 
     if ($this.is(':checked') == false) {
-      $div.remove();
       $master.find('input').click();
     }
 
