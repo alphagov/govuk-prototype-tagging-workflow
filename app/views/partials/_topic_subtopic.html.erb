@@ -1,11 +1,13 @@
 <fieldset>
-  <legend>Topics</legend>
+  <legend>
+    <h2>Topics</h2>
+  </legend>
 
-  <p>
+  <p class="lead add-top-margin add-bottom-margin">
     Tag this item if you want it to appear on a <a href="https://www.gov.uk/guidance/how-to-publish-on-gov-uk/creating-and-updating-pages#specialist-tagging-topics">topic page</a>. Items tagged to a <a href="#">curated topic</a> will not appear automatically - tag, publish, then <a href="https://www.gov.uk/guidance/contact-the-government-digital-service/how-to-contact-gds#how-to-contact-gds-about-govuk">contact GDS</a> to have this item added to a curated topic.
   </p>
 
-  <div class="suggested-topics">
+  <!--<div class="suggested-topics">
     <h3>Suggested topics</h3>
 
     <p>Your organisation usually tags to:</p>
@@ -29,29 +31,32 @@
     </ul>
 
     <p><a href="#" class="btn btn-default" id="suggested-topics-select">Select these topics</a> or choose more from below.</p>
-  </div>
+  </div> -->
 
   <div class="row">
     <div class="col-md-6">
       <div class="panel panel-default tag-explorer" id="tag-explorer">
         <div class="panel-heading">Topics</div>
+        <div class="panel-heading">
+          <input class="form-control" id="topic-search" placeholder="Search for topic">
+        </div>
 
         <div class="tag-container list-group tag-explorer-topics-level-1">
           <% topics.each do |topic| %>
-          <a href="#<%= topic['base_path'].gsub(/\//, "_") %>" class="list-group-item" id="<%= topic['base_path'].gsub(/\//, "_") %>_parent"><span class="return-arrow glyphicon glyphicon-chevron-left" aria-hidden="true"></span><%= topic['title'] %><span class="forward-arrow glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+            <a href="#<%= topic['base_path'].gsub(/\//, "_") %>" class="list-group-item" id="<%= topic['base_path'].gsub(/\//, "_") %>_parent"><span class="return-arrow glyphicon glyphicon-chevron-left" aria-hidden="true"></span><%= topic['title'] %><span class="forward-arrow glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
           <% end %>
 
           <% topics.each do |topic| %>
-          <div class="list-group tag-explorer-topics-level-2 js-hidden" id="<%= topic['base_path'].gsub(/\//, "_") %>">
-            <% topic['links']['children'].each do |subtopic| %>
-            <% curated = subtopic['details']['groups'].any? %>
-            <div class="list-group-item checkbox" id="<%= subtopic['base_path'].gsub(/\//, "_") %>-item" data-curated="<%= curated %>">
-              <label>
-                <input type="checkbox" value="<%= subtopic['base_path'].gsub(/\//, "_") %>" name="selected_topics"> <%= subtopic['title'] %>
-              </label>
+            <div class="list-group tag-explorer-topics-level-2 js-hidden" id="<%= topic['base_path'].gsub(/\//, "_") %>">
+              <% topic['links']['children'].each do |subtopic| %>
+              <% curated = subtopic['details']['groups'].any? %>
+              <div class="list-group-item checkbox" id="<%= subtopic['base_path'].gsub(/\//, "_") %>-item" data-curated="<%= curated %>">
+                <label>
+                  <input type="checkbox" value="<%= subtopic['base_path'].gsub(/\//, "_") %>" name="selected_topics"> <%= subtopic['title'] %>
+                </label>
+              </div>
+              <% end %>
             </div>
-            <% end %>
-          </div>
           <% end %>
         </div>
       </div>
@@ -60,10 +65,7 @@
     <div class="col-md-6">
       <div class="panel panel-default tag-explorer" id="selected-topics">
         <div class="panel-heading">Selected topics</div>
-
-        <div class="tag-container list-group selected-topics">
-
-        </div>
+        <div class="tag-container list-group selected-topics"></div>
       </div>
     </div>
   </div>
@@ -86,14 +88,6 @@
     </ul>
 
     <p id="topic-curated-warning">Read the guidance on how to <a href="https://www.gov.uk/guidance/how-to-publish-on-gov-uk/creating-and-updating-pages#a-to-z-topic-pages-and-two-column-topic-pages">get content added to curated topics</a>.</p>
-  </div>
-
-
-  <div class="form-group">
-    <div class="input-group">
-      <div class="input-group-addon">$</div>
-      <input type="text" class="form-control" id="topic-search" placeholder="Search for topic">
-    </div>
   </div>
 
 </fieldset>
