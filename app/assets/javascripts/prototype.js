@@ -10,6 +10,7 @@ $(document).ready(function() {
       $this.siblings('.list-group-item').show();
 
       $subtopic.hide();
+      $('.js-topic-filter').trigger('keyup');
     } else {
       // hide other subtopics
       $this.parents('.panel').find('.tag-explorer-topics-level-2').hide();
@@ -159,8 +160,6 @@ $(document).ready(function() {
       var $this = $(this);
       var topic = $.trim($this.text());
       var id = $this.prop('id');
-
-
       topicData.push({id:id, topic:topic});
     });
 
