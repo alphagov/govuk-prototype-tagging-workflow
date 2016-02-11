@@ -43,6 +43,7 @@ $(document).ready(function() {
 
       $selected.attr('id', val+'_selected-item');
       $selected.appendTo($target);
+      $selected.removeClass('no-search-match matched-search');
       $topic.addClass('list-group-item-info');
 
       // Curated topic warning
