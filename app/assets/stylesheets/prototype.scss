@@ -71,6 +71,14 @@
         display: none;
       }
     }
+
+    .matched-search label {
+      font-weight: bold;
+    }
+
+    .no-search-match .topic-child-title {
+      //color: #555;
+    }
   }
 }
 

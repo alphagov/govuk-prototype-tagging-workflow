@@ -55,7 +55,7 @@
               <% curated = subtopic['details']['groups'].any? %>
               <div class="js-topic-child list-group-item checkbox" id="<%= subtopic['base_path'].gsub(/\//, "_") %>-item" data-curated="<%= curated %>">
                 <label>
-                  <input type="checkbox" value="<%= subtopic['base_path'].gsub(/\//, "_") %>" name="selected_topics"> <%= subtopic['title'] %>
+                  <input type="checkbox" value="<%= subtopic['base_path'].gsub(/\//, "_") %>" name="selected_topics"> <span class="topic-child-title"><%= subtopic['title'] %></span>
                 </label>
               </div>
               <% end %>

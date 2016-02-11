@@ -17,9 +17,9 @@
             regExp = new RegExp(escapeStringForRegexp(searchString), 'i');
 
         // reset previous search matches
-        parents.data('child-match-count', 0);
+        parents.data('child-match-count', 0).removeClass('active');
         children.data('matched', false);
-        containers.data('count', 0);
+        containers.data('count', 0).hide();
 
         // search children, if match found, save count on group
         children.each(function() {
@@ -30,8 +30,10 @@
           if (child.text().search(regExp) > -1) {
             container.data('count', count + 1);
             child.data('matched', true);
+            child.addClass('matched-search').removeClass('no-search-match');
           } else {
             child.data('matched', false);
+            child.addClass('no-search-match').removeClass('matched-search');
           }
         });
 
