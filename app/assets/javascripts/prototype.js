@@ -167,10 +167,10 @@ $(document).ready(function() {
     return topicData;
   }
 
-  initBloodhound($('#topic-search'), getTopics());
+  //initBloodhound($('#topic-search'), getTopics());
 });
 
-var initBloodhound = function($elem, data) {
+/*var initBloodhound = function($elem, data) {
   var bloodhound = new Bloodhound({
     datumTokenizer: Bloodhound.tokenizers.obj.whitespace('topic'),
     queryTokenizer: Bloodhound.tokenizers.whitespace,
@@ -205,4 +205,4 @@ var initBloodhound = function($elem, data) {
       }
     });
   });
-}
+}*/

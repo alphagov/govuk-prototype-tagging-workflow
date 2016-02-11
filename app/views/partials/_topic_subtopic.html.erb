@@ -34,23 +34,26 @@
   </div> -->
 
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-6" data-module="topic-search">
       <div class="panel panel-default tag-explorer" id="tag-explorer">
         <div class="panel-heading">Topics</div>
         <div class="panel-heading">
-          <input class="form-control" id="topic-search" placeholder="Search for topic">
+          <input class="form-control js-topic-filter" id="topic-search" placeholder="Search for topics">
         </div>
 
         <div class="tag-container list-group tag-explorer-topics-level-1">
           <% topics.each do |topic| %>
-            <a href="#<%= topic['base_path'].gsub(/\//, "_") %>" class="list-group-item" id="<%= topic['base_path'].gsub(/\//, "_") %>_parent"><span class="return-arrow glyphicon glyphicon-chevron-left" aria-hidden="true"></span><%= topic['title'] %><span class="forward-arrow glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+            <a href="#<%= topic['base_path'].gsub(/\//, "_") %>" class="list-group-item js-topic-parent" id="<%= topic['base_path'].gsub(/\//, "_") %>_parent">
+              <span class="return-arrow glyphicon glyphicon-chevron-left add-right-margin"></span>
+              <%= topic['title'] %> <span class="text-muted">(<%= topic['links']['children'].size %>)</span><span class="forward-arrow glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            </a>
           <% end %>
 
           <% topics.each do |topic| %>
-            <div class="list-group tag-explorer-topics-level-2 js-hidden" id="<%= topic['base_path'].gsub(/\//, "_") %>">
+            <div class="list-group tag-explorer-topics-level-2 js-hidden js-topic-parent-group" id="<%= topic['base_path'].gsub(/\//, "_") %>">
               <% topic['links']['children'].each do |subtopic| %>
               <% curated = subtopic['details']['groups'].any? %>
-              <div class="list-group-item checkbox" id="<%= subtopic['base_path'].gsub(/\//, "_") %>-item" data-curated="<%= curated %>">
+              <div class="js-topic-child list-group-item checkbox" id="<%= subtopic['base_path'].gsub(/\//, "_") %>-item" data-curated="<%= curated %>">
                 <label>
                   <input type="checkbox" value="<%= subtopic['base_path'].gsub(/\//, "_") %>" name="selected_topics"> <%= subtopic['title'] %>
                 </label>
