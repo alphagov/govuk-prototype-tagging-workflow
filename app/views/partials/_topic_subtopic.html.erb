@@ -44,7 +44,8 @@
           <% topics.each do |topic| %>
           <div class="list-group tag-explorer-topics-level-2 js-hidden" id="<%= topic['base_path'].gsub(/\//, "_") %>">
             <% topic['links']['children'].each do |subtopic| %>
-            <div class="list-group-item checkbox" id="<%= subtopic['base_path'].gsub(/\//, "_") %>-item">
+            <% curated = subtopic['details']['groups'].any? %>
+            <div class="list-group-item checkbox" id="<%= subtopic['base_path'].gsub(/\//, "_") %>-item" data-curated="<%= curated %>">
               <label>
                 <input type="checkbox" value="<%= subtopic['base_path'].gsub(/\//, "_") %>" name="selected_topics"> <%= subtopic['title'] %>
               </label>
@@ -65,6 +66,26 @@
         </div>
       </div>
     </div>
+  </div>
+
+  <div class="preview-topics">
+    <h3>Preview topics</h3>
+
+    <p>Preview how your document will appear on the topic pages you've tagged to:</p>
+
+    <ul class="preview-topics-list">
+
+    </ul>
+  </div>
+
+  <div class="curated-topics notice bg-info">
+    <p>The following topics are curated:</p>
+
+    <ul class="curated-topics-list comma-separated-list">
+
+    </ul>
+
+    <p id="topic-curated-warning">Read the guidance on how to <a href="https://www.gov.uk/guidance/how-to-publish-on-gov-uk/creating-and-updating-pages#a-to-z-topic-pages-and-two-column-topic-pages">get content added to curated topics</a>.</p>
   </div>
 
 

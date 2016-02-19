@@ -31,9 +31,11 @@ $(document).ready(function() {
     var val = $this.val();
     var $selected = $('#'+val+'_selected-item');
     var $suggested = $('#'+val+'-suggested');
+    var topicName = $div.text().trim();
 
     var pos = val.lastIndexOf('_');
     var $topic = $('#'+val.substring(0, pos)+'_parent');
+    var curated = $div.data('curated');
 
     if ($this.is(':checked') && $selected.length == 0) {
       $selected = $div.clone();
@@ -43,19 +45,13 @@ $(document).ready(function() {
       $topic.addClass('list-group-item-info');
 
       // Curated topic warning
-      if (Math.random() <= (1/2)) {
-        var $topicCuratedWarning = $('#topic-curated-warning');
-
-        if ($topicCuratedWarning.length == 0) {
-          var $warningTarget = $('#tag-explorer').parents('.row').first();
-
-          $('<div class="notice bg-info"><p id="topic-curated-warning">Read the guidance on how to <a href="https://www.gov.uk/guidance/how-to-publish-on-gov-uk/creating-and-updating-pages#a-to-z-topic-pages-and-two-column-topic-pages">get content added to curated topics</a>.</p></div>')
-            .insertAfter($warningTarget);
-          $topicCuratedWarning = $('#topic-curated-warning');
+      if (curated) {
+        var $curatedTopics = $('.curated-topics');
+        if ($curatedTopics.is(':hidden')) {
+          $curatedTopics.show();
         }
 
-        var topicName = $.trim($div.text());
-        $topicCuratedWarning.before('<p id="topic-curated-warning-'+val+'">'+topicName+' is a curated topic.</p>');
+        $('.curated-topics-list').append('<li id="topic-curated-warning-'+val+'">'+topicName+'</li>');
       }
 
       // email subscribers warning
@@ -74,6 +70,21 @@ $(document).ready(function() {
 
         $topicSubscribers.text(numSubs + Number($topicSubscribers.text()));
       }
+
+      // Preview topic
+      if (!curated) {
+        var $previewTopics = $('.preview-topics');
+        if ($previewTopics.is(':hidden')) {
+          $previewTopics.show();
+        }
+
+        var documentTitle = "School capital funding allocations: 2015 to 2018";
+        var previewURL = '/preview?url=https://www.gov.uk'+val.replace(/_/g, "/")+'&title='+documentTitle;
+        var previewLink = '<li id="preview-topics-'+val+'"><a href="'+previewURL+'" rel="external" target="_blank">'+topicName+'</a></li>';
+
+        $('.preview-topics-list').append($(previewLink));
+      }
+
     } else if (!$this.is(':checked')) {
       $('#'+val+'_selected-item').remove();
 
@@ -134,4 +145,7 @@ $(document).ready(function() {
 
     $('.suggested-topics-list').find('input').prop('checked', true).trigger('change');
   });
+
+  $('.preview-topics').hide() // hide preview box on load
+  $('.curated-topics').hide() // hide curated topics box on load
 });

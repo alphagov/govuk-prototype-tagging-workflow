@@ -128,7 +128,13 @@ form {
     }
 
     &:nth-last-child(2):after {
-      content: " & ";
+      content: " and ";
     }
   }
+}
+
+a[rel="external"]:after {
+  content: image-url("preview-external-link.png");
+  margin-right: 0.2em;
+  margin-left: -0.2em;
 }
