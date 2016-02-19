@@ -17,7 +17,7 @@ class WhitehallController < ApplicationController
   helper_method :organisations
 
   def topics
-    @topics = JSON.parse(File.open('app/data/topics.json').read)['links']['children']
+    @topics = JSON.parse(File.open('app/data/topics.json').read)['links']['children'].sort_by { |r| r['title'] }
   end
   helper_method :topics
 
