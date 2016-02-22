@@ -21,21 +21,25 @@
         children.data('matched', false);
         containers.data('count', 0).hide();
 
-        // search children, if match found, save count on group
-        children.each(function() {
-          var child = $(this),
-              container = child.parent('.js-topic-parent-group'),
-              count = container.data('count');
+        // if string isn't empty search children, if match found, save count on group
+        if (searchString.length > 0) {
+          children.each(function() {
+            var child = $(this),
+                container = child.parent('.js-topic-parent-group'),
+                count = container.data('count');
 
-          if (child.text().search(regExp) > -1) {
-            container.data('count', count + 1);
-            child.data('matched', true);
-            child.addClass('matched-search').removeClass('no-search-match');
-          } else {
-            child.data('matched', false);
-            child.addClass('no-search-match').removeClass('matched-search');
-          }
-        });
+            if (child.text().search(regExp) > -1) {
+              container.data('count', count + 1);
+              child.data('matched', true);
+              child.addClass('matched-search').removeClass('no-search-match');
+            } else {
+              child.data('matched', false);
+              child.addClass('no-search-match').removeClass('matched-search');
+            }
+          });
+        } else {
+          children.addClass('no-search-match').removeClass('matched-search');
+        }
 
         // search parents, hide or show based on match or children
         parents.each(function() {
