@@ -150,4 +150,15 @@ $(document).ready(function() {
 
   $('.preview-topics').hide() // hide preview box on load
   $('.curated-topics').hide() // hide curated topics box on load
+
+  $('.nav-tabs').on('click', 'a', function(e) {
+    unloadWarning = true;
+  });
+
+  $(window).on('beforeunload', function(e) {
+    if (unloadWarning) {
+      unloadWarning = false;
+      return "You have unsaved changes that will be lost if you leave this page."
+    }
+  });
 });
