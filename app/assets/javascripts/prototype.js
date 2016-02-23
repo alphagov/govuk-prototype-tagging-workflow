@@ -102,12 +102,20 @@ $(document).ready(function() {
         $topic.removeClass('list-group-item-info');
       }
 
-      $('#topic-curated-warning-'+val).remove();
-
-      var $topicCuratedWarning = $('#topic-curated-warning');
-      if ($topicCuratedWarning.siblings().length == 0) {
-        $topicCuratedWarning.parent().remove();
+      var $previewTopics = $('.preview-topics');
+      $('#preview-topics-'+val).remove();
+      if ($previewTopics.find('li').length == 0) {
+        $previewTopics.hide();
       }
+
+      var $topicCuratedItem = $('#topic-curated-warning-'+val);
+
+      var $topicCuratedWarning = $('.curated-topics');
+      if ($topicCuratedItem.siblings().length == 0) {
+        $topicCuratedWarning.hide();
+      }
+
+      $topicCuratedItem.remove();
     }
 
     $suggested.prop('checked', $this.prop('checked'));
